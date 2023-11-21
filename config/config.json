@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "nazycodes",
+    "database": "errando_db_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "nazycodes",
+    "database": "errando_db_staging",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "nazycodes",
+    "database": "errando_db_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
