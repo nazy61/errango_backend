@@ -2,8 +2,8 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const secretKey = process.env.JWT_KEY;
 
-module.exports.generateToken = (userUUID) => {
-  return jwt.sign({ uuid: userUUID }, secretKey, {
+module.exports.generateToken = (userId) => {
+  return jwt.sign({ userId }, secretKey, {
     expiresIn: "1h",
   });
 };
@@ -20,7 +20,29 @@ module.exports.verifyToken = (req, res, next) => {
       return res.status(403).json({ message: "Forbidden: Invalid token" });
     }
 
-    req.uuid = data.uuid;
+    req.userId = data.userId;
     next();
   });
+};
+
+module.exports.generateOtpId = (data) => {
+  return jwt.sign({ data }, secretKey, {
+    expiresIn: 60 * 10,
+  });
+};
+
+module.exports.getOtpData = (otpToken) => {
+  if (!otpToken) {
+    throw new Error("Forbidden: Invalid token");
+  }
+
+  const data = jwt.verify(otpToken, secretKey, (err, data) => {
+    if (err) {
+      throw new Error("Forbidden: Invalid token");
+    }
+
+    return data.data;
+  });
+
+  return data;
 };

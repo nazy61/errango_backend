@@ -39,11 +39,11 @@ const userSchema = new mongoose.Schema(
     },
     pin: {
       type: String,
-      required: true,
+      required: false,
     },
     isOnline: {
       type: Boolean,
-      required: true,
+      default: false,
     },
   },
   {

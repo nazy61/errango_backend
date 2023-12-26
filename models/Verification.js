@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 
 const verificationSchema = new mongoose.Schema(
   {
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    identifier: {
+      type: String,
       required: true,
     },
     otp: {
@@ -17,7 +16,7 @@ const verificationSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   {
