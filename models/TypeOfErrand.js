@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 
-const roleSchema = new mongoose.Schema(
+const typeOfErrandSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
-      lowercase: true,
-      unique: true,
     },
   },
   {
@@ -14,4 +12,4 @@ const roleSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Role", roleSchema);
+module.exports = mongoose.model("TypeOfErrand", typeOfErrandSchema);
