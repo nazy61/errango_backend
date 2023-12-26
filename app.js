@@ -27,6 +27,7 @@ app.use(limiter);
 
 // all routes
 app.use("/v1", apiRoutes.roleRoutes);
+app.use("/v1", apiRoutes.faqRoutes);
 
 // Middleware for handling non-existent routes
 app.use((req, res, next) => {
