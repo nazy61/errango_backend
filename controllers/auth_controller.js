@@ -278,6 +278,7 @@ module.exports.verify_otp = async (req, res) => {
           roleId: role._id,
           ...userData,
           fullName: `${userData.firstName} ${userData.lastName}`,
+          accountNumber: userData.phoneNumber.slice(-10),
           password: hashedPassword,
         });
 
