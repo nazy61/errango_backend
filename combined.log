@@ -97,3 +97,41 @@
 2023-12-26 19:22:44 [INFO]: /v1/user/login
 2023-12-26 19:22:54 [INFO]: /v1/user/login
 2023-12-26 19:23:02 [INFO]: /v1/user/login
+2023-12-29 06:50:14 [INFO]: /v1/kyc
+2023-12-29 06:53:17 [INFO]: /v1/kyc
+2023-12-29 06:55:13 [INFO]: /v1/kyc
+2023-12-29 06:55:35 [INFO]: /v1/kyc
+2023-12-29 06:56:05 [INFO]: /v1/kyc
+2023-12-29 06:56:11 [INFO]: /v1/kyc
+2023-12-29 06:56:44 [INFO]: /v1/kyc
+2023-12-29 06:57:22 [INFO]: /v1/kyc
+2023-12-29 06:59:57 [INFO]: /v1/kyc
+2023-12-29 07:05:25 [INFO]: /v1/kyc
+2023-12-29 07:12:56 [INFO]: /v1/kyc
+2023-12-29 07:15:12 [INFO]: /v1/kyc
+2023-12-29 07:15:23 [INFO]: /v1/kyc
+2023-12-29 07:15:23 [ERROR]: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-29 07:15:53 [INFO]: /v1/kyc
+2023-12-29 07:15:53 [ERROR]: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-29 07:21:21 [INFO]: /v1/kyc
+2023-12-29 07:24:37 [INFO]: /v1/kyc
+2023-12-29 07:25:23 [INFO]: /v1/kyc
+2023-12-29 07:25:54 [INFO]: /v1/kyc
+2023-12-29 07:26:30 [INFO]: /v1/kyc
+2023-12-29 07:26:47 [INFO]: /v1/kyc
+2023-12-29 07:30:41 [INFO]: /v1/user/login
+2023-12-29 07:31:02 [INFO]: /v1/kyc
+2023-12-29 07:36:00 [INFO]: /v1/kyc/658b0d9c6a33b638031ba02a
+2023-12-29 07:36:16 [INFO]: /v1/kycs
+2023-12-29 07:37:58 [INFO]: /v1/kyc/approve/:userId
+2023-12-29 07:37:58 [ERROR]: kyc.save is not a function
+2023-12-29 07:38:24 [INFO]: /v1/kyc/approve/:userId
+2023-12-29 07:38:24 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
+2023-12-29 07:38:35 [INFO]: /v1/kyc/approve/658b0d9c6a33b638031ba02a
+2023-12-29 07:39:01 [INFO]: /v1/kyc/approve/658b0d9c6a33b638031ba02a
+2023-12-29 07:39:32 [INFO]: /v1/kyc/approve/658b0d9c6a33b638031ba02a
+2023-12-29 07:40:01 [INFO]: /v1/kyc/approve/658b0d9c6a33b638031ba02a
+2023-12-29 07:40:39 [INFO]: /v1/kyc/decline/:userId
+2023-12-29 07:40:39 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
+2023-12-29 07:40:55 [INFO]: /v1/kyc/decline/658b0d9c6a33b638031ba02a
+2023-12-29 07:41:21 [INFO]: /v1/kyc/decline/658b0d9c6a33b638031ba02a
