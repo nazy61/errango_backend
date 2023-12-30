@@ -31,6 +31,7 @@ app.use("/v1", apiRoutes.faqRoutes);
 app.use("/v1", apiRoutes.authRoutes);
 app.use("/v1", apiRoutes.kycRoutes);
 app.use("/v1", apiRoutes.errandRoutes);
+app.use("/v1", apiRoutes.userRoutes);
 
 // Middleware for handling non-existent routes
 app.use((req, res, next) => {

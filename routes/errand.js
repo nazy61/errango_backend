@@ -8,7 +8,19 @@ const router = Router();
 router.get("/errands", log, verifyToken, errandMethods.get_errands);
 router.get("/errand/:errandId", log, verifyToken, errandMethods.get_errand);
 router.get("/my/errands", log, verifyToken, errandMethods.get_my_errands);
+router.get(
+  "/my/errands/transactions",
+  log,
+  verifyToken,
+  errandMethods.get_errand_transactions
+);
 router.get("/my/requests", log, verifyToken, errandMethods.get_my_requests);
+router.get(
+  "/my/requests/transactions",
+  log,
+  verifyToken,
+  errandMethods.get_runner_transactions
+);
 router.get(
   "/errand/:errandId/messages",
   log,

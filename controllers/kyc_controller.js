@@ -89,7 +89,10 @@ module.exports.create_user_kyc = async (req, res) => {
       const { error, value } = fileSchema.validate(file);
 
       if (error) {
-        return res.status(400).send(error.details[0].message);
+        return res.status(400).send({
+          success: false,
+          message: error.details[0].message,
+        });
       }
 
       // Wrap the Cloudinary upload in a promise

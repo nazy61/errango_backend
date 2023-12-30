@@ -10,6 +10,7 @@ const ErrandReview = require("../models/ErrandReview");
 const ErrandWallet = require("../models/ErrandWallet");
 const Wallet = require("../models/Wallet");
 const User = require("../models/User");
+const ErrandTransaction = require("../models/ErrandTransaction");
 
 module.exports.get_my_errands = async (req, res) => {
   try {
@@ -140,6 +141,46 @@ module.exports.get_errand_bids = async (req, res) => {
     return res.json({
       success: true,
       data: bids,
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.get_errand_transactions = async (req, res) => {
+  const { errandId } = req.params;
+  try {
+    const transactions = await ErrandTransaction.find({
+      $and: [{ errand: errandId }, { type: "deposit" }],
+    });
+
+    return res.json({
+      success: true,
+      data: transactions,
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.get_runner_transactions = async (req, res) => {
+  const { errandId } = req.params;
+  try {
+    const transactions = await ErrandTransaction.find({
+      $and: [{ errand: errandId }, { type: "withdrawal" }],
+    });
+
+    return res.json({
+      success: true,
+      data: transactions,
     });
   } catch (error) {
     logger.error(error.message);
@@ -607,6 +648,14 @@ module.exports.fund_errand = async (req, res) => {
       wallet.balance += balance;
       await wallet.save();
 
+      await ErrandTransaction.create({
+        errandId: wallet.errand,
+        amount: amount,
+        type: "deposit",
+        reference: generateUniqueReference(),
+        description: "Deposit from user errango wallet",
+      });
+
       return res.json({
         success: true,
         message: "Errand wallet funded successfully",
@@ -672,3 +721,11 @@ module.exports.delete_my_errand = async (req, res) => {
     });
   }
 };
+
+function generateUniqueReference() {
+  const timestamp = new Date().getTime();
+  const randomNum = Math.floor(Math.random() * 1000000); // Adjust the range based on your needs
+
+  const uniqueReference = `${timestamp}-${randomNum}`;
+  return uniqueReference;
+}

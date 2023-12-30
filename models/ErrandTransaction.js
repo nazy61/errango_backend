@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const runnerErrandSchema = new mongoose.Schema(
+const errandTransactionSchema = new mongoose.Schema(
   {
     errandId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -29,4 +29,4 @@ const runnerErrandSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("RunnerErrand", runnerErrandSchema);
+module.exports = mongoose.model("ErrandTransaction", errandTransactionSchema);

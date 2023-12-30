@@ -589,6 +589,7 @@ module.exports.user_login = async (req, res) => {
   try {
     const user = await User.findOne({
       $or: [{ email: identifier }, { phoneNumber: identifier }],
+      $and: [{ disable: false }],
     });
 
     if (user) {

@@ -3,6 +3,7 @@ const faqRoutes = require("./faq");
 const authRoutes = require("./auth");
 const kycRoutes = require("./kyc");
 const errandRoutes = require("./errand");
+const userRoutes = require("./user");
 
 module.exports = {
   roleRoutes,
@@ -10,4 +11,5 @@ module.exports = {
   authRoutes,
   kycRoutes,
   errandRoutes,
+  userRoutes,
 };
