@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const errandSchema = new mongoose.Schema(
   {
-    typeOfErrandId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "TypeOfErrand",
+      ref: "User",
       required: true,
     },
     address: {
@@ -17,6 +17,10 @@ const errandSchema = new mongoose.Schema(
     },
     description: {
       type: String,
+      required: true,
+    },
+    minimumBid: {
+      type: Number,
       required: true,
     },
     isAccepted: {

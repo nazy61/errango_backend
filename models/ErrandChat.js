@@ -2,14 +2,19 @@ const mongoose = require("mongoose");
 
 const errandChatSchema = new mongoose.Schema(
   {
-    posterUserId: {
+    poster: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    runnerUserId: {
+    runner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
+    },
+    errand: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Errand",
       required: true,
     },
   },

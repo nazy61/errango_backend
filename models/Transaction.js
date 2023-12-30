@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema(
   {
-    errandTypeId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "TypeOfErrand",
-      required: true,
-    },
     type: {
       type: String,
       required: true,

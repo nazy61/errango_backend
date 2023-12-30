@@ -2,17 +2,21 @@ const mongoose = require("mongoose");
 
 const runnerErrandSchema = new mongoose.Schema(
   {
-    userId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    errandId: {
+    errand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Errand",
       required: true,
     },
     isCompleted: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },

@@ -2,15 +2,27 @@ const mongoose = require("mongoose");
 
 const errandReviewSchema = new mongoose.Schema(
   {
-    errandId: {
+    errand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Errand",
       required: true,
     },
-    userId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
+    },
+    rating: {
+      type: Number,
+      required: true,
+    },
+    comment: {
+      type: String,
+      required: false,
+    },
+    tip: {
+      type: Number,
+      required: false,
     },
   },
   {

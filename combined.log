@@ -135,3 +135,71 @@
 2023-12-29 07:40:39 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
 2023-12-29 07:40:55 [INFO]: /v1/kyc/decline/658b0d9c6a33b638031ba02a
 2023-12-29 07:41:21 [INFO]: /v1/kyc/decline/658b0d9c6a33b638031ba02a
+2023-12-30 17:36:20 [INFO]: /v1/user/login
+2023-12-30 17:37:25 [INFO]: /v1/errands
+2023-12-30 17:41:48 [INFO]: /v1/my/errands
+2023-12-30 17:42:02 [INFO]: /v1/my/errands
+2023-12-30 17:42:24 [INFO]: /v1/my/requests
+2023-12-30 17:43:33 [INFO]: /v1/errand
+2023-12-30 17:44:08 [INFO]: /v1/errand
+2023-12-30 17:45:24 [INFO]: /v1/errand
+2023-12-30 17:46:36 [INFO]: /v1/errand
+2023-12-30 17:46:36 [ERROR]: Errand validation failed: pickUpAddress: Path `pickUpAddress` is required., user: Path `user` is required.
+2023-12-30 17:47:46 [INFO]: /v1/errand
+2023-12-30 17:47:54 [INFO]: /v1/errand
+2023-12-30 17:49:21 [INFO]: /v1/errands
+2023-12-30 17:49:21 [ERROR]: Cannot populate path `errand` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2023-12-30 17:49:50 [INFO]: /v1/errands
+2023-12-30 17:49:56 [INFO]: /v1/my/errands
+2023-12-30 17:50:20 [INFO]: /v1/my/requests
+2023-12-30 17:50:52 [INFO]: /v1/my/requests
+2023-12-30 17:53:01 [INFO]: /v1/errand
+2023-12-30 17:53:18 [INFO]: /v1/errand/bid
+2023-12-30 17:53:28 [INFO]: /v1/errand/bid
+2023-12-30 17:54:08 [INFO]: /v1/errand/659049baee8c08fbf3968333/bids
+2023-12-30 17:54:17 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 17:54:51 [INFO]: /v1/errand/659049baee8c08fbf3968333/bids
+2023-12-30 17:58:21 [INFO]: /v1/errand/659049baee8c08fbf3968333/bids
+2023-12-30 17:58:25 [INFO]: /v1/errand/accept
+2023-12-30 17:58:25 [ERROR]: acceptedUserId is not defined
+2023-12-30 17:58:59 [INFO]: /v1/errand/accept
+2023-12-30 17:59:08 [INFO]: /v1/my/errands
+2023-12-30 18:00:51 [INFO]: /v1/errands
+2023-12-30 18:00:59 [INFO]: /v1/errand/create/chat
+2023-12-30 18:00:59 [ERROR]: User is not defined
+2023-12-30 18:01:21 [INFO]: /v1/errand/create/chat
+2023-12-30 18:03:47 [INFO]: /v1/errand/create/chat
+2023-12-30 18:05:29 [INFO]: /v1/errand/message/send
+2023-12-30 18:05:29 [ERROR]: Cannot access 'message' before initialization
+2023-12-30 18:06:03 [INFO]: /v1/errand/message/send
+2023-12-30 18:06:14 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:09:47 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:10:32 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:10:54 [INFO]: /v1/errand/create/chat
+2023-12-30 18:10:54 [ERROR]: ErrandChat validation failed: errand: Path `errand` is required.
+2023-12-30 18:12:14 [INFO]: /v1/my/requests
+2023-12-30 18:12:27 [INFO]: /v1/errand/create/chat
+2023-12-30 18:12:35 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:12:54 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:13:20 [INFO]: /v1/errand/message/send
+2023-12-30 18:13:23 [INFO]: /v1/errand/659049baee8c08fbf3968333/messages
+2023-12-30 18:16:57 [INFO]: /v1/my/requests
+2023-12-30 18:17:16 [INFO]: /v1/errand/end/session/659049baee8c08fbf3968333
+2023-12-30 18:17:16 [ERROR]: Cannot set properties of null (setting 'isCompleted')
+2023-12-30 18:19:12 [INFO]: /v1/errand/end/session/659049baee8c08fbf3968333
+2023-12-30 18:19:12 [ERROR]: Cannot set properties of null (setting 'isCompleted')
+2023-12-30 18:19:36 [INFO]: /v1/errand/end/session/659049baee8c08fbf3968333
+2023-12-30 18:21:02 [INFO]: /v1/errand/review
+2023-12-30 18:21:50 [INFO]: /v1/errand/review
+2023-12-30 18:22:10 [INFO]: /v1/errand/review
+2023-12-30 18:28:12 [INFO]: /v1/errands
+2023-12-30 18:28:28 [INFO]: /v1/errand/659049baee8c08fbf3968333
+2023-12-30 18:28:47 [INFO]: /v1/errand/fund
+2023-12-30 18:28:54 [INFO]: /v1/errand/fund
+2023-12-30 18:28:54 [ERROR]: Cannot read properties of null (reading 'balance')
+2023-12-30 18:30:04 [INFO]: /v1/errands
+2023-12-30 18:30:13 [INFO]: /v1/errand/659049baee8c08fbf3968333/delete
+2023-12-30 18:30:46 [INFO]: /v1/errand/request/659049baee8c08fbf3968333/delete
+2023-12-30 18:30:56 [INFO]: /v1/my/errands
+2023-12-30 18:31:05 [INFO]: /v1/my/requests
+2023-12-30 18:31:13 [INFO]: /v1/errands

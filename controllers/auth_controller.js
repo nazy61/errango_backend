@@ -5,6 +5,7 @@ const Admin = require("../models/Admin");
 const Role = require("../models/Role");
 const User = require("../models/User");
 const Verification = require("../models/Verification");
+const Wallet = require("../models/Wallet");
 const {
   generateToken,
   generateOtpId,
@@ -280,6 +281,18 @@ module.exports.verify_otp = async (req, res) => {
           fullName: `${userData.firstName} ${userData.lastName}`,
           accountNumber: userData.phoneNumber.slice(-10),
           password: hashedPassword,
+        });
+
+        await Wallet.create({
+          user: user._id,
+          type: "errango_wallet",
+          balance: 0.0,
+        });
+
+        await Wallet.create({
+          user: user._id,
+          type: "runner_wallet",
+          balance: 0.0,
         });
 
         const token = generateToken(user._id);

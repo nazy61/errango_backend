@@ -1,15 +1,19 @@
 const mongoose = require("mongoose");
 
-const acceptedErrandSchema = new mongoose.Schema(
+const errandBidSchema = new mongoose.Schema(
   {
-    errandId: {
+    errand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Errand",
       required: true,
     },
-    userId: {
+    bidder: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
+    },
+    bidAmount: {
+      type: Number,
       required: true,
     },
   },
@@ -18,4 +22,4 @@ const acceptedErrandSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("AcceptedErrand", acceptedErrandSchema);
+module.exports = mongoose.model("ErrandBid", errandBidSchema);

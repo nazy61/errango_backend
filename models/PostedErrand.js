@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 
 const postedErrandSchema = new mongoose.Schema(
   {
-    errandId: {
+    errand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Errand",
       required: true,
     },
-    userId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    acceptedUserId: {
+    acceptedUser: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: false,
     },
     isCompleted: {
       type: Boolean,
@@ -23,7 +23,11 @@ const postedErrandSchema = new mongoose.Schema(
     },
     totalAmount: {
       type: Number,
-      required: true,
+      required: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   {

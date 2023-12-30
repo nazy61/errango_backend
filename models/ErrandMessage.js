@@ -2,17 +2,17 @@ const mongoose = require("mongoose");
 
 const errandMessageSchema = new mongoose.Schema(
   {
-    senderId: {
+    sender: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    receiverId: {
+    receiver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    errandChatId: {
+    errandChat: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "ErrandChat",
       required: true,

@@ -1,15 +1,13 @@
 const logger = require("../utils/logger");
 const KYC = require("../models/KYC");
-const User = require("../models/User");
 const Joi = require("joi");
-const fs = require("fs");
 const cloudinary = require("cloudinary").v2;
 
 // Cloudinary configuration
 cloudinary.config({
-  cloud_name: "dvqaqvx2p",
-  api_key: "377811227984548",
-  api_secret: "Q7fJISrUr5X8jurtq6iyOuvDQ7w",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 module.exports.get_user_kyc = async (req, res) => {
@@ -101,7 +99,7 @@ module.exports.create_user_kyc = async (req, res) => {
           .upload_stream(
             {
               resource_type: "auto", // or 'image', 'video', 'raw'
-              public_id: `your-folder/${file.originalname}`, // Set your desired folder and file name
+              public_id: `errango/kyc/${file.originalname}`, // Set your desired folder and file name
             },
             (error, result) => {
               if (error) {
@@ -146,9 +144,12 @@ module.exports.create_user_kyc = async (req, res) => {
       faceImage: faceImageUrl,
     });
 
-    res.send("success");
+    return res.json({
+      success: true,
+      message: "KYC created successfully",
+      data: kyc,
+    });
   } catch (error) {
-    console.log(error);
     logger.error(error.message);
     return res.status(400).json({
       success: false,

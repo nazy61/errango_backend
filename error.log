@@ -30,3 +30,12 @@
 2023-12-29 07:37:58 [ERROR]: kyc.save is not a function
 2023-12-29 07:38:24 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
 2023-12-29 07:40:39 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
+2023-12-30 17:46:36 [ERROR]: Errand validation failed: pickUpAddress: Path `pickUpAddress` is required., user: Path `user` is required.
+2023-12-30 17:49:21 [ERROR]: Cannot populate path `errand` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2023-12-30 17:58:25 [ERROR]: acceptedUserId is not defined
+2023-12-30 18:00:59 [ERROR]: User is not defined
+2023-12-30 18:05:29 [ERROR]: Cannot access 'message' before initialization
+2023-12-30 18:10:54 [ERROR]: ErrandChat validation failed: errand: Path `errand` is required.
+2023-12-30 18:17:16 [ERROR]: Cannot set properties of null (setting 'isCompleted')
+2023-12-30 18:19:12 [ERROR]: Cannot set properties of null (setting 'isCompleted')
+2023-12-30 18:28:54 [ERROR]: Cannot read properties of null (reading 'balance')
