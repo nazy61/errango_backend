@@ -29,5 +29,36 @@ router.post(
   verifyToken,
   authMethods.forgot_password_create_password
 );
+router.post(
+  "/user/send/pin/change/otp",
+  log,
+  verifyToken,
+  authMethods.send_pin_change_otp
+);
+router.post(
+  "/user/resend/pin/change/otp",
+  log,
+  verifyToken,
+  authMethods.resend_pin_change_otp
+);
+router.post("/user/pin/change", log, verifyToken, authMethods.change_pin);
+router.post(
+  "/user/send/password/change/otp",
+  log,
+  verifyToken,
+  authMethods.send_password_change_otp
+);
+router.post(
+  "/user/resend/password/change/otp",
+  log,
+  verifyToken,
+  authMethods.resend_password_change_otp
+);
+router.post(
+  "/user/password/change",
+  log,
+  verifyToken,
+  authMethods.change_password
+);
 
 module.exports = router;

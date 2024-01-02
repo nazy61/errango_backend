@@ -39,3 +39,27 @@
 2023-12-30 18:17:16 [ERROR]: Cannot set properties of null (setting 'isCompleted')
 2023-12-30 18:19:12 [ERROR]: Cannot set properties of null (setting 'isCompleted')
 2023-12-30 18:28:54 [ERROR]: Cannot read properties of null (reading 'balance')
+2023-12-31 05:55:42 [ERROR]: Forbidden: Invalid token
+2023-12-31 05:55:53 [ERROR]: email all ready registered, please create an account with another email address
+2023-12-31 05:56:19 [ERROR]: phone number all ready registered, please login with this phone number
+2023-12-31 07:40:18 [ERROR]: undefined
+2023-12-31 07:42:26 [ERROR]: undefined
+2023-12-31 07:43:48 [ERROR]: undefined
+2023-12-31 07:47:33 [ERROR]: undefined
+2023-12-31 07:48:51 [ERROR]: undefined
+2023-12-31 07:49:49 [ERROR]: Forbidden: Invalid token
+2023-12-31 07:50:15 [ERROR]: error
+2023-12-31 07:50:15 [ERROR]: Forbidden: Invalid token
+2023-12-31 07:50:46 [ERROR]: error
+2023-12-31 07:50:46 [ERROR]: Forbidden: Invalid token
+2023-12-31 07:52:29 [ERROR]: error
+2023-12-31 07:52:29 [ERROR]: Unknown error, please contact the administrator
+2023-12-31 07:53:17 [ERROR]: error
+2023-12-31 07:53:17 [ERROR]: Unknown error, please contact the administrator
+2023-12-31 07:57:52 [ERROR]: error
+2023-12-31 07:57:52 [ERROR]: Unknown error, please contact the administrator
+2023-12-31 11:55:03 [ERROR]: Cannot set headers after they are sent to the client
+2023-12-31 11:55:38 [ERROR]: Cannot set headers after they are sent to the client
+2023-12-31 11:57:01 [ERROR]: Cannot read properties of undefined (reading 'docFile')
+2023-12-31 11:57:19 [ERROR]: Cannot read properties of undefined (reading 'docFile')
+2023-12-31 11:57:36 [ERROR]: Cannot set headers after they are sent to the client

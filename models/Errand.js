@@ -7,20 +7,20 @@ const errandSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     address: {
       type: String,
       required: true,
     },
     pickUpAddress: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
       type: String,
-      required: true,
-    },
-    minimumBid: {
-      type: Number,
       required: true,
     },
     isAccepted: {

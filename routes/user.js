@@ -15,6 +15,7 @@ const upload = multer({
 });
 
 router.get("/users", log, verifyToken, userMethods.get_users);
+router.get("/user/me", log, verifyToken, userMethods.get_me);
 router.get("/user/:userId", log, verifyToken, userMethods.get_user);
 router.get(
   "/user/wallet/runner",

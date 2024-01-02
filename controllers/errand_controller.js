@@ -192,16 +192,16 @@ module.exports.get_runner_transactions = async (req, res) => {
 };
 
 module.exports.request_errand = async (req, res) => {
-  const { address, pickUpAddress, description, minimumBid } = req.body;
+  const { type, address, pickUpAddress, description } = req.body;
 
   const schema = Joi.object().keys({
+    type: Joi.string().required(),
     address: Joi.string().required(),
-    pickUpAddress: Joi.string().required(),
+    pickUpAddress: Joi.string().allow(null),
     description: Joi.string().required(),
-    minimumBid: Joi.number().required(),
   });
 
-  const data = { address, pickUpAddress, description, minimumBid };
+  const data = { type, address, pickUpAddress, description };
   const result = schema.validate(data);
 
   if (result.error) {
@@ -214,10 +214,10 @@ module.exports.request_errand = async (req, res) => {
   try {
     const errand = await Errand.create({
       user: req.userId,
+      type,
       address,
       pickUpAddress,
       description,
-      minimumBid,
     });
 
     const postedErrand = await PostedErrand.create({

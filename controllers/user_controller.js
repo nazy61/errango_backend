@@ -2,6 +2,7 @@ const Joi = require("joi");
 const logger = require("../utils/logger");
 const User = require("../models/User");
 const Wallet = require("../models/Wallet");
+const KYC = require("../models/KYC");
 const cloudinary = require("cloudinary").v2;
 
 // Cloudinary configuration
@@ -37,6 +38,32 @@ module.exports.get_user = async (req, res) => {
     return res.json({
       success: true,
       data: user,
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.get_me = async (req, res) => {
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+    const errangoWallet = await Wallet.findOne({
+      $and: [{ user: req.userId }, { type: "errango_wallet" }],
+    });
+    const runnerWallet = await Wallet.findOne({
+      $and: [{ user: req.userId }, { type: "runner_wallet" }],
+    });
+    const kyc = await KYC.findOne({
+      $and: [{ userId: req.userId }],
+    });
+
+    return res.json({
+      success: true,
+      data: { user, errangoWallet, runnerWallet, kyc },
     });
   } catch (error) {
     logger.error(error.message);

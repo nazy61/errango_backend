@@ -272,7 +272,6 @@ module.exports.verify_otp = async (req, res) => {
           .equals(userData.phoneNumber);
 
         verification.isVerified = true;
-
         verification.save();
 
         const user = await User.create({
@@ -283,6 +282,7 @@ module.exports.verify_otp = async (req, res) => {
           password: hashedPassword,
         });
 
+        console.log("here2");
         await Wallet.create({
           user: user._id,
           type: "errango_wallet",
@@ -302,15 +302,21 @@ module.exports.verify_otp = async (req, res) => {
           data: { ...user._doc, password: undefined },
           token,
         });
+      } else {
+        return res.status(400).json({
+          success: false,
+          message: "OTP Incorrect!",
+        });
       }
     }
 
     return res.status(500).json({
       success: false,
-      data: "Something went wrong, please try again",
+      message: "Something went wrong, please try again",
     });
   } catch (error) {
-    logger.error(error.message);
+    logger.error("error");
+    logger.error(error);
     return res.status(400).json({
       success: false,
       message: error.message,
@@ -337,8 +343,11 @@ module.exports.set_pin = async (req, res) => {
 
   try {
     const user = await User.findOne().where("_id").equals(req.userId);
-    user.pin = pin;
 
+    const salt = await bcrypt.genSalt();
+    const hashedPin = await bcrypt.hash(pin, salt);
+
+    user.pin = hashedPin;
     await user.save();
 
     return res.json({
@@ -540,8 +549,9 @@ module.exports.forgot_password_create_password = async (req, res) => {
 
   try {
     const user = await User.findOne().where("_id").equals(req.userId);
+    const auth = await bcrypt.compare(pin, user.pin);
 
-    if (pin === user.pin) {
+    if (auth) {
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -555,9 +565,9 @@ module.exports.forgot_password_create_password = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
+    return res.status(400).json({
       success: false,
-      data: "Something went wrong, please try again",
+      message: "Pin Incorrect!",
     });
   } catch (error) {
     logger.error(error.message);
@@ -615,6 +625,263 @@ module.exports.user_login = async (req, res) => {
         message: "Wrong credentials, Please try again",
       });
     }
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.send_pin_change_otp = async (req, res) => {
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+
+    const verification = await Verification.create({
+      identifier: user.phoneNumber,
+      otp: "123456",
+      type: "pin_change",
+    });
+
+    const otpToken = generateOtpId(verification._id);
+
+    return res.json({
+      success: true,
+      data: { otpToken },
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.resend_pin_change_otp = async (req, res) => {
+  const { otpToken } = req.body;
+
+  const schema = Joi.object().keys({
+    otpToken: Joi.string().required(),
+  });
+
+  const data = { otpToken };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const verificationId = getOtpData(otpToken);
+
+    const verification = await Verification.findOne()
+      .where("_id")
+      .equals(verificationId);
+
+    const otp = "123456";
+
+    verification.otp = otp;
+
+    await verification.save();
+
+    return res.json({
+      success: true,
+      message: "OTP Resent",
+      data: { otpToken },
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.change_pin = async (req, res) => {
+  const { oldPin, newPin, otpToken, otp } = req.body;
+
+  const schema = Joi.object().keys({
+    oldPin: Joi.string().required(),
+    newPin: Joi.string().required(),
+    otpToken: Joi.string().required(),
+    otp: Joi.string().required(),
+  });
+
+  const data = { oldPin, newPin, otpToken, otp };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+    const verificationId = getOtpData(otpToken);
+
+    const verification = await Verification.findOne()
+      .where("_id")
+      .equals(verificationId);
+
+    if (verification && verification.otp === otp && !verification.isVerified) {
+      const auth = await bcrypt.compare(oldPin, user.pin);
+
+      if (auth) {
+        const salt = await bcrypt.genSalt();
+        const hashedPin = await bcrypt.hash(newPin, salt);
+
+        verification.isVerified = true;
+        verification.save();
+
+        user.pin = hashedPin;
+        await user.save();
+
+        return res.json({
+          success: true,
+          message: "Pin changed successfully",
+        });
+      }
+    }
+
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong, please try again",
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.send_password_change_otp = async (req, res) => {
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+
+    const verification = await Verification.create({
+      identifier: user.phoneNumber,
+      otp: "123456",
+      type: "password_change",
+    });
+
+    const otpToken = generateOtpId(verification._id);
+
+    return res.json({
+      success: true,
+      data: { otpToken },
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.resend_password_change_otp = async (req, res) => {
+  const { otpToken } = req.body;
+
+  const schema = Joi.object().keys({
+    otpToken: Joi.string().required(),
+  });
+
+  const data = { otpToken };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const verificationId = getOtpData(otpToken);
+
+    const verification = await Verification.findOne()
+      .where("_id")
+      .equals(verificationId);
+
+    const otp = "123456";
+
+    verification.otp = otp;
+
+    await verification.save();
+
+    return res.json({
+      success: true,
+      message: "OTP Resent",
+      data: { otpToken },
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.change_password = async (req, res) => {
+  const { oldPassword, newPassword, otpToken, otp } = req.body;
+
+  const schema = Joi.object().keys({
+    oldPassword: Joi.string().required(),
+    newPassword: Joi.string().required(),
+    otpToken: Joi.string().required(),
+    otp: Joi.string().required(),
+  });
+
+  const data = { oldPassword, newPassword, otpToken, otp };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+    const verificationId = getOtpData(otpToken);
+
+    const verification = await Verification.findOne()
+      .where("_id")
+      .equals(verificationId);
+
+    if (verification && verification.otp === otp) {
+      const auth = await bcrypt.compare(oldPassword, user.password);
+
+      if (auth) {
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        user.password = hashedPassword;
+        await user.save();
+
+        return res.json({
+          success: true,
+          message: "Password changed successfully",
+        });
+      }
+    }
+
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong, please try again",
+    });
   } catch (error) {
     logger.error(error.message);
     return res.status(400).json({

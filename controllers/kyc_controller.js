@@ -68,7 +68,6 @@ module.exports.create_user_kyc = async (req, res) => {
     fieldname: Joi.string(),
     originalname: Joi.string(),
     encoding: Joi.string(),
-    mimetype: Joi.string().valid("image/jpeg", "image/png", "image/webp"),
     buffer: Joi.binary(),
   }).unknown(true);
 
@@ -86,6 +85,7 @@ module.exports.create_user_kyc = async (req, res) => {
     // upload files to cloudinary
     const validationPromises = Object.keys(req.files).map(async (key) => {
       const file = req.files[key][0];
+      console.log(req.files[key][0].mimetype);
       const { error, value } = fileSchema.validate(file);
 
       if (error) {
