@@ -1,4 +1,6 @@
 const express = require("express");
+const http = require("http");
+const WebSocket = require("ws");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
@@ -11,6 +13,8 @@ mongoose.set("strictQuery", true);
 const port = process.env.PORT || 3000;
 const dbConnectionString = process.env.DB_CONNECTION_STRING;
 const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
 
 app.use(helmet());
 app.use(express.json());
@@ -50,7 +54,47 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen({ port }, async () => {
+wss.on("connection", (ws) => {
+  // WebSocket connection established
+  //   ws.send("WebSocket connection established");
+
+  // Set up heartbeat interval
+  // const heartbeatInterval = setInterval(() => {
+  //   sendHeartbeat(ws);
+  // }, 5000);
+
+  ws.on("message", (message) => {
+    // Handle other messages here
+
+    try {
+      // Assuming messages are JSON strings
+      const parsedMessage = JSON.parse(message);
+
+      // Now you can work with the parsed message
+      console.log("Parsed message:", parsedMessage);
+
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify(parsedMessage));
+      }
+    } catch (error) {
+      // Handle parsing errors
+      console.error("Error parsing message:", error);
+    }
+  });
+
+  ws.on("close", () => {
+    clearInterval(heartbeatInterval);
+  });
+});
+
+// Function to send heartbeat messages
+function sendHeartbeat(ws) {
+  if (ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ type: "heartbeat" }));
+  }
+}
+
+server.listen(port, async () => {
   console.log(`Errango listening on port ${port}`);
   mongoose.connect(dbConnectionString);
   console.log("Database connected!");

@@ -11,6 +11,8 @@ const {
   generateOtpId,
   getOtpData,
 } = require("../middlewares/auth");
+const { send_email, send_sms } = require("../utils/notification");
+const { generateSixDigits } = require("../utils/methods");
 
 module.exports.create_admin = async (req, res) => {
   const { fullName, email, phoneNumber, password } = req.body;
@@ -170,11 +172,20 @@ module.exports.create_user = async (req, res) => {
   try {
     const otpToken = generateOtpId(data);
 
+    const otp = generateSixDigits();
+
     Verification.create({
       identifier: data.phoneNumber,
-      otp: "123456",
+      otp: otp,
       type: "phone",
     });
+
+    send_sms(
+      `+234${data.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
+
+    send_email();
 
     return res.json({
       success: true,
@@ -214,11 +225,15 @@ module.exports.resend_otp = async (req, res) => {
         .where("identifier")
         .equals(userData.phoneNumber);
 
-      const otp = "123456";
+      const otp = generateSixDigits();
 
       verification.otp = otp;
-
       await verification.save();
+
+      send_sms(
+        `+234${userData.phoneNumber.slice(-10)}`,
+        `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+      );
 
       return res.json({
         success: true,
@@ -399,12 +414,16 @@ module.exports.forgot_password = async (req, res) => {
       .where("identifier")
       .equals(user.phoneNumber);
 
-    const otp = "123456";
+    const otp = generateSixDigits();
 
     verification.otp = otp;
     verification.isVerified = false;
-
     await verification.save();
+
+    send_sms(
+      `+234${user.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
 
     return res.json({
       success: true,
@@ -493,10 +512,15 @@ module.exports.forgot_password_resend_otp = async (req, res) => {
         .where("identifier")
         .equals(user.phoneNumber);
 
-      const otp = "123456";
+      const otp = generateSixDigits();
 
       verification.otp = otp;
       await verification.save();
+
+      send_sms(
+        `+234${user.phoneNumber.slice(-10)}`,
+        `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+      );
 
       return res.json({
         success: true,
@@ -637,12 +661,18 @@ module.exports.user_login = async (req, res) => {
 module.exports.send_pin_change_otp = async (req, res) => {
   try {
     const user = await User.findOne().where("_id").equals(req.userId);
+    const otp = generateSixDigits();
 
     const verification = await Verification.create({
       identifier: user.phoneNumber,
-      otp: "123456",
+      otp: otp,
       type: "pin_change",
     });
+
+    send_sms(
+      `+234${user.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
 
     const otpToken = generateOtpId(verification._id);
 
@@ -677,17 +707,22 @@ module.exports.resend_pin_change_otp = async (req, res) => {
   }
 
   try {
+    const user = await User.findOne().where("_id").equals(req.userId);
     const verificationId = getOtpData(otpToken);
 
     const verification = await Verification.findOne()
       .where("_id")
       .equals(verificationId);
 
-    const otp = "123456";
+    const otp = generateSixDigits();
 
     verification.otp = otp;
-
     await verification.save();
+
+    send_sms(
+      `+234${user.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
 
     return res.json({
       success: true,
@@ -767,12 +802,18 @@ module.exports.change_pin = async (req, res) => {
 module.exports.send_password_change_otp = async (req, res) => {
   try {
     const user = await User.findOne().where("_id").equals(req.userId);
+    const otp = generateSixDigits();
 
     const verification = await Verification.create({
       identifier: user.phoneNumber,
-      otp: "123456",
+      otp: otp,
       type: "password_change",
     });
+
+    send_sms(
+      `+234${user.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
 
     const otpToken = generateOtpId(verification._id);
 
@@ -807,17 +848,22 @@ module.exports.resend_password_change_otp = async (req, res) => {
   }
 
   try {
+    const user = await User.findOne().where("_id").equals(req.userId);
     const verificationId = getOtpData(otpToken);
 
     const verification = await Verification.findOne()
       .where("_id")
       .equals(verificationId);
 
-    const otp = "123456";
+    const otp = generateSixDigits();
 
     verification.otp = otp;
-
     await verification.save();
+
+    send_sms(
+      `+234${user.phoneNumber.slice(-10)}`,
+      `Hello, Your OTP for verification is: ${otp}. Please use this code within the next [time limit, e.g., 5 minutes] minutes to complete your authentication.`
+    );
 
     return res.json({
       success: true,
