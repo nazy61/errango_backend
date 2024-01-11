@@ -50,6 +50,14 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    lat: {
+      type: Number,
+      required: false,
+    },
+    lng: {
+      type: Number,
+      required: false,
+    },
     disable: {
       type: Boolean,
       default: false,

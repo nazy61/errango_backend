@@ -6,7 +6,13 @@ const { verifyToken } = require("../middlewares/auth");
 const router = Router();
 
 router.get("/errands", log, verifyToken, errandMethods.get_errands);
-router.get("/errand/:errandId", log, verifyToken, errandMethods.get_errand);
+router.get(
+  "/errand/active",
+  log,
+  verifyToken,
+  errandMethods.check_active_errand
+);
+
 router.get("/my/errands", log, verifyToken, errandMethods.get_my_errands);
 router.get(
   "/my/errands/transactions",
@@ -22,6 +28,12 @@ router.get(
   errandMethods.get_runner_transactions
 );
 router.get(
+  "/errand/:postedErrandId",
+  log,
+  verifyToken,
+  errandMethods.get_errand
+);
+router.get(
   "/errand/:errandId/messages",
   log,
   verifyToken,
@@ -33,6 +45,7 @@ router.get(
   verifyToken,
   errandMethods.get_errand_bids
 );
+
 router.post("/errand", log, verifyToken, errandMethods.request_errand);
 router.post("/errand/bid", log, verifyToken, errandMethods.bid_errand);
 router.post(
@@ -40,6 +53,12 @@ router.post(
   log,
   verifyToken,
   errandMethods.accept_errand_request
+);
+router.post(
+  "/errand/auto/assign",
+  log,
+  verifyToken,
+  errandMethods.auto_assign_errand_request
 );
 router.post(
   "/errand/create/chat",

@@ -37,6 +37,19 @@ app.use("/v1", apiRoutes.kycRoutes);
 app.use("/v1", apiRoutes.errandRoutes);
 app.use("/v1", apiRoutes.userRoutes);
 
+app.post("/v1/send/websocket/notification", (req, res) => {
+  wss.clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(JSON.stringify(req.body));
+    }
+  });
+
+  return res.json({
+    success: true,
+    message: "Websocket Notification sent",
+  });
+});
+
 // Middleware for handling non-existent routes
 app.use((req, res, next) => {
   res.status(404).send({
@@ -56,12 +69,11 @@ app.use((err, req, res, next) => {
 
 wss.on("connection", (ws) => {
   // WebSocket connection established
-  //   ws.send("WebSocket connection established");
-
-  // Set up heartbeat interval
-  // const heartbeatInterval = setInterval(() => {
-  //   sendHeartbeat(ws);
-  // }, 5000);
+  ws.send(
+    JSON.stringify({
+      message: "WebSocket connection established",
+    })
+  );
 
   ws.on("message", (message) => {
     // Handle other messages here
@@ -73,26 +85,15 @@ wss.on("connection", (ws) => {
       // Now you can work with the parsed message
       console.log("Parsed message:", parsedMessage);
 
-      if (ws.readyState === WebSocket.OPEN) {
-        ws.send(JSON.stringify(parsedMessage));
-      }
+      ws.send(JSON.stringify(parsedMessage));
     } catch (error) {
       // Handle parsing errors
       console.error("Error parsing message:", error);
     }
   });
 
-  ws.on("close", () => {
-    clearInterval(heartbeatInterval);
-  });
+  ws.on("close", () => {});
 });
-
-// Function to send heartbeat messages
-function sendHeartbeat(ws) {
-  if (ws.readyState === WebSocket.OPEN) {
-    ws.send(JSON.stringify({ type: "heartbeat" }));
-  }
-}
 
 server.listen(port, async () => {
   console.log(`Errango listening on port ${port}`);

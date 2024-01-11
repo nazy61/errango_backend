@@ -21,6 +21,10 @@ const postedErrandSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    suggestedAmount: {
+      type: Number,
+      default: 0,
+    },
     totalAmount: {
       type: Number,
       required: false,

@@ -7,18 +7,18 @@ const ErrandMessage = require("../models/ErrandMessage");
 const ErrandBid = require("../models/ErrandBid");
 const ErrandChat = require("../models/ErrandChat");
 const ErrandReview = require("../models/ErrandReview");
-const ErrandWallet = require("../models/ErrandWallet");
 const Wallet = require("../models/Wallet");
 const User = require("../models/User");
 const ErrandTransaction = require("../models/ErrandTransaction");
 
 module.exports.get_my_errands = async (req, res) => {
   try {
-    const errands = await RunnerErrand.find({
-      $and: [{ user: req.userId }, { disabled: false }],
+    const errands = await PostedErrand.find({
+      $and: [{ acceptedUser: req.userId }, { disabled: false }],
     })
       .populate("errand")
-      .populate("user");
+      .populate("user")
+      .populate("acceptedUser");
 
     return res.json({
       success: true,
@@ -54,7 +54,10 @@ module.exports.get_my_requests = async (req, res) => {
   try {
     const errands = await PostedErrand.find({
       $and: [{ user: req.userId }, { disabled: false }],
-    }).populate("errand");
+    })
+      .populate("errand")
+      .populate("user")
+      .populate("acceptedUser");
 
     return res.json({
       success: true,
@@ -70,10 +73,16 @@ module.exports.get_my_requests = async (req, res) => {
 };
 
 module.exports.get_errand = async (req, res) => {
-  const { errandId } = req.params;
+  const { postedErrandId } = req.params;
 
   try {
-    const errand = await Errand.findOne().where("_id").equals(errandId);
+    const errand = await PostedErrand.findOne()
+      .where("_id")
+      .equals(postedErrandId)
+      .populate("errand")
+      .populate("acceptedUser")
+      .populate("user");
+    console.log(errand);
 
     if (!errand) {
       return res.status(404).json({
@@ -82,16 +91,9 @@ module.exports.get_errand = async (req, res) => {
       });
     }
 
-    const errandWallet = await ErrandWallet.findOne()
-      .where("errand")
-      .equals(errandId);
-
     return res.json({
       success: true,
-      data: {
-        errand,
-        errandWallet,
-      },
+      data: errand,
     });
   } catch (error) {
     logger.error(error.message);
@@ -136,7 +138,11 @@ module.exports.get_errand_messages = async (req, res) => {
 module.exports.get_errand_bids = async (req, res) => {
   const { errandId } = req.params;
   try {
-    const bids = await ErrandBid.find().where("errand").equals(errandId);
+    const bids = await ErrandBid.find()
+      .where("errand")
+      .equals(errandId)
+      .populate("errand")
+      .populate("bidder");
 
     return res.json({
       success: true,
@@ -192,16 +198,35 @@ module.exports.get_runner_transactions = async (req, res) => {
 };
 
 module.exports.request_errand = async (req, res) => {
-  const { type, address, pickUpAddress, description } = req.body;
+  const {
+    type,
+    address,
+    pickUpAddress,
+    description,
+    suggestedAmount,
+    lat,
+    lng,
+  } = req.body;
 
   const schema = Joi.object().keys({
     type: Joi.string().required(),
     address: Joi.string().required(),
     pickUpAddress: Joi.string().allow(null),
     description: Joi.string().required(),
+    suggestedAmount: Joi.number().allow(null),
+    lat: Joi.number().required(),
+    lng: Joi.number().required(),
   });
 
-  const data = { type, address, pickUpAddress, description };
+  const data = {
+    type,
+    address,
+    pickUpAddress,
+    description,
+    suggestedAmount,
+    lat,
+    lng,
+  };
   const result = schema.validate(data);
 
   if (result.error) {
@@ -218,16 +243,14 @@ module.exports.request_errand = async (req, res) => {
       address,
       pickUpAddress,
       description,
+      lat,
+      lng,
     });
 
     const postedErrand = await PostedErrand.create({
       errand: errand._id,
       user: req.userId,
-    });
-
-    await ErrandWallet.create({
-      errand: errand._id,
-      balance: 0.0,
+      suggestedAmount: suggestedAmount ?? 0,
     });
 
     const newPostedErrand = await PostedErrand.findOne()
@@ -278,6 +301,8 @@ module.exports.bid_errand = async (req, res) => {
       });
     }
 
+    console.log("error");
+
     const bid = await ErrandBid.create({
       errand: errandId,
       bidder: req.userId,
@@ -287,7 +312,66 @@ module.exports.bid_errand = async (req, res) => {
     return res.json({
       success: true,
       message: "Errand bidded for successfully",
-      data: bid,
+      data: errand,
+    });
+  } catch (error) {
+    console.log(error);
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.auto_assign_errand_request = async (req, res) => {
+  const { errandId } = req.body;
+
+  const schema = Joi.object().keys({
+    errandId: Joi.string().required(),
+  });
+
+  const data = { errandId };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const errand = await Errand.findOne().where("_id").equals(errandId);
+
+    if (!errand) {
+      return res.status(404).json({
+        success: false,
+        message: "Errand not found",
+      });
+    }
+
+    errand.isAccepted = true;
+    errand.save();
+
+    const postedErrand = await PostedErrand.findOne()
+      .where("errand")
+      .equals(errandId);
+
+    postedErrand.acceptedUser = req.userId;
+    postedErrand.totalAmount = 0;
+
+    await postedErrand.save();
+
+    await RunnerErrand.create({
+      user: req.userId,
+      errand: errandId,
+    });
+
+    return res.json({
+      success: true,
+      message: "Errand accepted",
+      data: {},
     });
   } catch (error) {
     logger.error(error.message);
@@ -528,18 +612,18 @@ module.exports.end_errand_session = async (req, res) => {
       runnerErrand.isCompleted = true;
       await runnerErrand.save();
 
-      const errandWallet = await ErrandWallet.findOne()
-        .where("errand")
-        .equals(errandId);
-
       const runnerWallet = await Wallet.findOne()
         .where("user")
         .equals(postedErrand.acceptedUser);
 
-      runnerWallet.balance += errandWallet.balance;
-      errandWallet.balance = 0;
-      await errandWallet.save();
+      const errangoWallet = await Wallet.findOne()
+        .where("user")
+        .equals(postedErrand.user);
+
+      errangoWallet.balance += runnerWallet.balance;
+      runnerWallet.balance = 0;
       await runnerWallet.save();
+      await errangoWallet.save();
     }
 
     postedErrand.isCompleted = true;
@@ -612,14 +696,14 @@ module.exports.review_errand = async (req, res) => {
 };
 
 module.exports.fund_errand = async (req, res) => {
-  const { walletId, amount } = req.body;
+  const { errandId, amount } = req.body;
 
   const schema = Joi.object().keys({
-    walletId: Joi.string().required(),
+    errandId: Joi.string().required(),
     amount: Joi.number().required(),
   });
 
-  const data = { walletId, amount };
+  const data = { errandId, amount };
   const result = schema.validate(data);
 
   if (result.error) {
@@ -630,12 +714,18 @@ module.exports.fund_errand = async (req, res) => {
   }
 
   try {
-    const wallet = ErrandWallet.findOne().where("_id").equals(walletId);
+    const postedErrand = PostedErrand.findOne()
+      .where("errand")
+      .equals(errandId);
+
+    const wallet = Wallet.findOne()
+      .where("user")
+      .equals(postedErrand.acceptedUser);
 
     if (!wallet) {
       return res.status(404).json({
         success: false,
-        message: "Errand Wallet not found",
+        message: "Runner Wallet not found",
       });
     }
 
@@ -658,7 +748,7 @@ module.exports.fund_errand = async (req, res) => {
 
       return res.json({
         success: true,
-        message: "Errand wallet funded successfully",
+        message: "Runner wallet funded successfully",
         data: wallet,
       });
     } else {
@@ -667,6 +757,37 @@ module.exports.fund_errand = async (req, res) => {
         message: "Insufficient wallet balance",
       });
     }
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.check_active_errand = async (req, res) => {
+  try {
+    const postedErrand = await PostedErrand.findOne({
+      acceptedUser: { $ne: null },
+      $and: [{ isCompleted: false }],
+      $or: [{ user: req.userId }, { acceptedUser: req.userId }],
+    })
+      .populate("errand")
+      .populate("user")
+      .populate("acceptedUser");
+
+    console.log(postedErrand);
+
+    const chatId = await ErrandChat.findOne()
+      .where("errand")
+      .equals(postedErrand.errand._id);
+
+    return res.json({
+      success: true,
+      data: postedErrand,
+      chatId: chatId,
+    });
   } catch (error) {
     logger.error(error.message);
     return res.status(400).json({

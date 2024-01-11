@@ -23,6 +23,14 @@ const errandSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    lat: {
+      type: Number,
+      required: true,
+    },
+    lng: {
+      type: Number,
+      required: true,
+    },
     isAccepted: {
       type: Boolean,
       default: false,

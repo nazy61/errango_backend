@@ -170,10 +170,29 @@ module.exports.update_profile_picture = async (req, res) => {
 };
 
 module.exports.go_online = async (req, res) => {
+  const { lat, lng } = req.body;
+
+  const schema = Joi.object().keys({
+    lat: Joi.number().required(),
+    lng: Joi.number().required(),
+  });
+
+  const data = { lat, lng };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
   try {
     const user = await User.findOne().where("_id").equals(req.userId);
 
     user.isOnline = true;
+    user.lat = lat;
+    user.lng = lng;
     await user.save();
 
     return res.json({
