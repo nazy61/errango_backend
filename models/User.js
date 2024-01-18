@@ -46,6 +46,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    passcode: {
+      type: String,
+      required: false,
+    },
     isOnline: {
       type: Boolean,
       default: false,

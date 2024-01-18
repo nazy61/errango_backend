@@ -379,6 +379,99 @@ module.exports.set_pin = async (req, res) => {
   }
 };
 
+module.exports.set_passcode = async (req, res) => {
+  const { passcode } = req.body;
+
+  const schema = Joi.object().keys({
+    passcode: Joi.string().min(4).required(),
+  });
+
+  const data = { passcode };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+
+    const salt = await bcrypt.genSalt();
+    const hashedPasscode = await bcrypt.hash(passcode, salt);
+
+    user.passcode = hashedPasscode;
+    await user.save();
+
+    return res.json({
+      success: true,
+      message: "Passcode set successfully",
+      data: {},
+    });
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.passcode_login = async (req, res) => {
+  const { passcode, email } = req.body;
+
+  const schema = Joi.object().keys({
+    email: Joi.string().required(),
+    passcode: Joi.string().required(),
+  });
+
+  const data = { email, passcode };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const user = await User.findOne().where("email").equals(email);
+
+    if (user) {
+      const auth = await bcrypt.compare(passcode, user.passcode);
+
+      if (auth) {
+        const token = generateToken(user._id);
+
+        return res.json({
+          success: true,
+          data: { ...user._doc, password: undefined },
+          token,
+        });
+      } else {
+        return res.status(401).json({
+          success: false,
+          message: "Wrong credentials, Please try again",
+        });
+      }
+    } else {
+      return res.status(401).json({
+        success: false,
+        message: "Wrong credentials, Please try again",
+      });
+    }
+  } catch (error) {
+    logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 module.exports.forgot_password = async (req, res) => {
   const { identifier } = req.body;
 

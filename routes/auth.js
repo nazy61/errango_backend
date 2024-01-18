@@ -9,9 +9,11 @@ router.post("/admin", log, authMethods.create_admin);
 router.post("/admin/login", log, authMethods.login_admin);
 router.post("/user", log, authMethods.create_user);
 router.post("/user/login", log, authMethods.user_login);
+router.post("/user/login/passcode", log, authMethods.passcode_login);
 router.post("/user/resend/otp", log, authMethods.resend_otp);
 router.post("/user/verify/otp", log, authMethods.verify_otp);
 router.post("/user/set/pin", log, verifyToken, authMethods.set_pin);
+router.post("/user/set/passcode", log, verifyToken, authMethods.set_passcode);
 router.post("/user/forgot/password", log, authMethods.forgot_password);
 router.post(
   "/user/forgot/password/verify/otp",
