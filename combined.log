@@ -1086,3 +1086,22 @@
 2024-01-18 22:24:05 [INFO]: /v1/user/me
 2024-01-18 22:24:05 [INFO]: /v1/errand/active
 2024-01-18 22:24:05 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-01-19 10:55:35 [INFO]: /v1/get_faq_categories
+2024-01-19 10:55:47 [INFO]: /v1/user/login/passcode
+2024-01-19 10:55:47 [ERROR]: data and hash arguments required
+2024-01-19 10:57:50 [INFO]: /v1/user
+2024-01-19 10:57:53 [INFO]: /v1/user/verify/otp
+2024-01-19 10:58:00 [INFO]: /v1/user/set/pin
+2024-01-19 10:58:06 [INFO]: /v1/user/set/passcode
+2024-01-19 10:58:08 [INFO]: /v1/user/me
+2024-01-19 10:58:08 [INFO]: /v1/errand/active
+2024-01-19 10:58:08 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-01-19 10:58:40 [INFO]: /v1/my/requests
+2024-01-19 10:58:40 [INFO]: /v1/my/errands
+2024-01-19 11:05:25 [INFO]: /v1/get_faq_categories
+2024-01-19 11:05:30 [INFO]: /v1/user/login/passcode
+2024-01-19 11:05:30 [INFO]: /v1/user/me
+2024-01-19 11:05:30 [INFO]: /v1/errand/active
+2024-01-19 11:05:30 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-01-19 11:05:32 [INFO]: /v1/my/requests
+2024-01-19 11:05:32 [INFO]: /v1/my/errands
