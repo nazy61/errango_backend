@@ -250,7 +250,7 @@ module.exports.request_errand = async (req, res) => {
     const postedErrand = await PostedErrand.create({
       errand: errand._id,
       user: req.userId,
-      suggestedAmount: suggestedAmount ?? 0,
+      suggestedAmount: suggestedAmount,
     });
 
     const newPostedErrand = await PostedErrand.findOne()
