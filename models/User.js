@@ -33,9 +33,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    bvn: {
+      type: String,
+      unique: true,
+    },
     accountNumber: {
       type: String,
-      required: true,
       unique: true,
     },
     password: {

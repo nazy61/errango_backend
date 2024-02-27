@@ -4,6 +4,7 @@ const User = require("../models/User");
 const Wallet = require("../models/Wallet");
 const KYC = require("../models/KYC");
 const cloudinary = require("cloudinary").v2;
+const axios = require("axios");
 
 // Cloudinary configuration
 cloudinary.config({
@@ -162,6 +163,87 @@ module.exports.update_profile_picture = async (req, res) => {
       .end(req.file.buffer);
   } catch (error) {
     logger.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports.update_bvn = async (req, res) => {
+  const { bvn, dob } = req.body;
+
+  const schema = Joi.object().keys({
+    bvn: Joi.string().required(),
+    dob: Joi.string().required(),
+  });
+
+  const data = { bvn, dob };
+  const result = schema.validate(data);
+
+  if (result.error) {
+    return res.status(400).send({
+      success: false,
+      message: result.error.details[0].message,
+    });
+  }
+
+  try {
+    const user = await User.findOne().where("_id").equals(req.userId);
+    const monnifyApiKey = process.env.MONNIFY_API_KEY;
+    const monnifySecret = process.env.MONNIFY_SECRET_KEY;
+
+    const monnifyBase64 = Buffer.from(
+      `${monnifyApiKey}:${monnifySecret}`
+    ).toString("base64");
+
+    // generate reference
+    const reference = `ERRANGO-${user._id}`;
+
+    // Define custom headers
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${monnifyBase64}`,
+    };
+
+    // make axios request to monnify to verify bvn
+    const monnifyResponse = await axios.post(
+      "https://sandbox.monnify.com/api/v1/disbursements/wallet",
+      {
+        walletReference: reference,
+        walletName: reference,
+        customerName: user.fullName,
+        bvnDetails: {
+          bvn: bvn,
+          bvnDateOfBirth: dob, // "1997-06-13",
+        },
+        customerEmail: user.email,
+      },
+      {
+        headers,
+      }
+    );
+
+    if (monnifyResponse.data.responseMessage.toLowerCase() === "success") {
+      user.bvn = bvn;
+      user.dob = dob;
+      user.accountNumber = monnifyResponse.data.responseBody.accountNumber;
+      await user.save();
+
+      return res.json({
+        success: true,
+        data: user,
+      });
+    } else {
+      return res.status(400).json({
+        success: false,
+        message: monnifyResponse.data.responseMessage,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    logger.error("error");
+    logger.error(error);
     return res.status(400).json({
       success: false,
       message: error.message,

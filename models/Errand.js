@@ -31,6 +31,10 @@ const errandSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    amount: {
+      type: Number,
+      required: true,
+    },
     isAccepted: {
       type: Boolean,
       default: false,

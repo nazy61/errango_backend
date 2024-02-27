@@ -36,6 +36,7 @@ router.post(
   upload.single("image"),
   userMethods.update_profile_picture
 );
+router.post("/user/bvn", log, verifyToken, userMethods.update_bvn);
 router.post("/user/go/online", log, verifyToken, userMethods.go_online);
 router.post("/user/go/offline", log, verifyToken, userMethods.go_offline);
 router.post("/user/disable", log, verifyToken, userMethods.disable_account);

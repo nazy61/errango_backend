@@ -275,16 +275,14 @@ module.exports.verify_otp = async (req, res) => {
 
   try {
     const userData = getOtpData(otpToken);
+    const verification = await Verification.findOne().where("otp").equals(otp);
 
     if (userData) {
-      if (otp === "123456") {
+      if (verification) {
         const salt = await bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(userData.password, salt);
 
         const role = await Role.findOne().where("name").equals("user");
-        const verification = await Verification.findOne()
-          .where("identifier")
-          .equals(userData.phoneNumber);
 
         verification.isVerified = true;
         verification.save();
@@ -293,7 +291,6 @@ module.exports.verify_otp = async (req, res) => {
           roleId: role._id,
           ...userData,
           fullName: `${userData.firstName} ${userData.lastName}`,
-          accountNumber: userData.phoneNumber.slice(-10),
           password: hashedPassword,
         });
 
@@ -448,7 +445,13 @@ module.exports.passcode_login = async (req, res) => {
 
         return res.json({
           success: true,
-          data: { ...user._doc, password: undefined },
+          data: {
+            ...user._doc,
+            password: undefined,
+            pin: undefined,
+            passcode: undefined,
+            isBVNSet: user.bvn ? true : false,
+          },
           token,
         });
       } else {
@@ -727,7 +730,13 @@ module.exports.user_login = async (req, res) => {
 
         return res.json({
           success: true,
-          data: { ...user._doc, password: undefined },
+          data: {
+            ...user._doc,
+            password: undefined,
+            pin: undefined,
+            passcode: undefined,
+            isBVNSet: user.bvn ? true : false,
+          },
           token,
         });
       } else {

@@ -1,122 +1,52 @@
-2023-12-26 13:30:54 [ERROR]: Admin validation failed: roleId: Path `roleId` is required.
-2023-12-26 13:32:22 [ERROR]: Admin validation failed: roleId: Path `roleId` is required.
-2023-12-26 13:32:34 [ERROR]: Admin validation failed: roleId: Path `roleId` is required.
-2023-12-26 13:33:15 [ERROR]: Admin validation failed: roleId: Path `roleId` is required.
-2023-12-26 13:35:40 [ERROR]: email all ready registered, please create an account with another email address
-2023-12-26 17:26:20 [ERROR]: user is not defined
-2023-12-26 17:27:34 [ERROR]: secretOrPrivateKey must have a value
-2023-12-26 17:28:54 [ERROR]: secretOrPrivateKey must have a value
-2023-12-26 17:29:12 [ERROR]: secretOrPrivateKey must have a value
-2023-12-26 17:29:23 [ERROR]: secretOrPrivateKey must have a value
-2023-12-26 17:31:26 [ERROR]: secretOrPrivateKey must have a value
-2023-12-26 18:16:49 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:17:53 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:18:18 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:18:53 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:19:09 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:19:22 [ERROR]: Cannot read properties of undefined (reading 'otpToken')
-2023-12-26 18:21:53 [ERROR]: req is not defined
-2023-12-26 18:22:44 [ERROR]: Forbidden: Invalid token
-2023-12-26 18:25:00 [ERROR]: Forbidden: Invalid token
-2023-12-26 18:25:35 [ERROR]: Forbidden: Invalid token
-2023-12-26 18:26:06 [ERROR]: Forbidden: Invalid token
-2023-12-26 18:29:40 [ERROR]: User validation failed: pin: Path `pin` is required.
-2023-12-26 19:07:10 [ERROR]: Cannot set properties of null (setting 'otp')
-2023-12-26 19:07:56 [ERROR]: Cannot set properties of null (setting 'otp')
-2023-12-26 19:14:11 [ERROR]: Cast to ObjectId failed for value "userId" (type string) at path "_id" for model "User"
-2023-12-26 19:18:26 [ERROR]: userData is not defined
-2023-12-29 07:15:23 [ERROR]: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
-2023-12-29 07:15:53 [ERROR]: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
-2023-12-29 07:37:58 [ERROR]: kyc.save is not a function
-2023-12-29 07:38:24 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
-2023-12-29 07:40:39 [ERROR]: Cast to ObjectId failed for value ":userId" (type string) at path "userId" for model "KYC"
-2023-12-30 17:46:36 [ERROR]: Errand validation failed: pickUpAddress: Path `pickUpAddress` is required., user: Path `user` is required.
-2023-12-30 17:49:21 [ERROR]: Cannot populate path `errand` because it is not in your schema. Set the `strictPopulate` option to false to override.
-2023-12-30 17:58:25 [ERROR]: acceptedUserId is not defined
-2023-12-30 18:00:59 [ERROR]: User is not defined
-2023-12-30 18:05:29 [ERROR]: Cannot access 'message' before initialization
-2023-12-30 18:10:54 [ERROR]: ErrandChat validation failed: errand: Path `errand` is required.
-2023-12-30 18:17:16 [ERROR]: Cannot set properties of null (setting 'isCompleted')
-2023-12-30 18:19:12 [ERROR]: Cannot set properties of null (setting 'isCompleted')
-2023-12-30 18:28:54 [ERROR]: Cannot read properties of null (reading 'balance')
-2023-12-31 05:55:42 [ERROR]: Forbidden: Invalid token
-2023-12-31 05:55:53 [ERROR]: email all ready registered, please create an account with another email address
-2023-12-31 05:56:19 [ERROR]: phone number all ready registered, please login with this phone number
-2023-12-31 07:40:18 [ERROR]: undefined
-2023-12-31 07:42:26 [ERROR]: undefined
-2023-12-31 07:43:48 [ERROR]: undefined
-2023-12-31 07:47:33 [ERROR]: undefined
-2023-12-31 07:48:51 [ERROR]: undefined
-2023-12-31 07:49:49 [ERROR]: Forbidden: Invalid token
-2023-12-31 07:50:15 [ERROR]: error
-2023-12-31 07:50:15 [ERROR]: Forbidden: Invalid token
-2023-12-31 07:50:46 [ERROR]: error
-2023-12-31 07:50:46 [ERROR]: Forbidden: Invalid token
-2023-12-31 07:52:29 [ERROR]: error
-2023-12-31 07:52:29 [ERROR]: Unknown error, please contact the administrator
-2023-12-31 07:53:17 [ERROR]: error
-2023-12-31 07:53:17 [ERROR]: Unknown error, please contact the administrator
-2023-12-31 07:57:52 [ERROR]: error
-2023-12-31 07:57:52 [ERROR]: Unknown error, please contact the administrator
-2023-12-31 11:55:03 [ERROR]: Cannot set headers after they are sent to the client
-2023-12-31 11:55:38 [ERROR]: Cannot set headers after they are sent to the client
-2023-12-31 11:57:01 [ERROR]: Cannot read properties of undefined (reading 'docFile')
-2023-12-31 11:57:19 [ERROR]: Cannot read properties of undefined (reading 'docFile')
-2023-12-31 11:57:36 [ERROR]: Cannot set headers after they are sent to the client
-2024-01-08 07:45:12 [ERROR]: Cast to ObjectId failed for value "active" (type string) at path "_id" for model "PostedErrand"
-2024-01-08 07:45:45 [ERROR]: Cast to ObjectId failed for value "active" (type string) at path "_id" for model "PostedErrand"
-2024-01-08 12:03:01 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 12:27:05 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 13:33:11 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 13:58:33 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:32:34 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:34:11 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:34:22 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:35:37 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:37:52 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 14:45:03 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 17:11:46 [ERROR]: Cannot read properties of null (reading '_id')
-2024-01-08 17:15:07 [ERROR]: Cannot read properties of null (reading '_id')
-2024-01-08 17:15:51 [ERROR]: Cannot read properties of null (reading '_id')
-2024-01-08 19:03:29 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 19:23:36 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 19:24:24 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 19:34:02 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-08 20:43:32 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-09 15:54:30 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-09 15:55:34 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-09 15:56:53 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-09 16:14:58 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-09 16:15:30 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-11 05:07:20 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-13 11:41:03 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-13 11:43:20 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-13 11:53:00 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 10:29:55 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 10:33:17 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 10:33:28 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 11:47:42 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 12:05:10 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 12:52:27 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 13:18:07 [ERROR]: data and hash arguments required
-2024-01-18 13:19:06 [ERROR]: data and hash arguments required
-2024-01-18 13:19:36 [ERROR]: data and hash arguments required
-2024-01-18 13:20:16 [ERROR]: data and hash arguments required
-2024-01-18 13:21:36 [ERROR]: data and hash arguments required
-2024-01-18 13:22:17 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 13:24:11 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 14:58:46 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 15:51:00 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 17:47:59 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 18:19:07 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 18:27:47 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 21:56:48 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 21:57:38 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 22:07:23 [ERROR]: data and hash arguments required
-2024-01-18 22:07:36 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 22:10:38 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-18 22:23:48 [ERROR]: data and hash arguments required
-2024-01-18 22:24:05 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-19 10:55:47 [ERROR]: data and hash arguments required
-2024-01-19 10:58:08 [ERROR]: Cannot read properties of null (reading 'errand')
-2024-01-19 11:05:30 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:43:23 [ERROR]: error
+2024-02-26 20:43:23 [ERROR]: Request failed with status code 422
+2024-02-26 20:44:27 [ERROR]: error
+2024-02-26 20:44:27 [ERROR]: Request failed with status code 422
+2024-02-26 20:45:16 [ERROR]: error
+2024-02-26 20:45:16 [ERROR]: Request failed with status code 401
+2024-02-26 20:45:28 [ERROR]: error
+2024-02-26 20:45:28 [ERROR]: Request failed with status code 401
+2024-02-26 20:58:39 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:59:27 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:59:38 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:16:39 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:18:35 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:21:27 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:36:36 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:38:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:39:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:40:43 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:43:49 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:45:14 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:46:02 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:48:17 [ERROR]: error
+2024-02-26 21:48:17 [ERROR]: Request failed with status code 422
+2024-02-26 21:50:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:52:17 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:53:34 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 22:50:13 [ERROR]: error
+2024-02-26 22:50:13 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 22:50:19 [ERROR]: error
+2024-02-26 22:50:19 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 22:50:52 [ERROR]: error
+2024-02-26 22:50:52 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:05:38 [ERROR]: error
+2024-02-26 23:05:38 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:06:00 [ERROR]: error
+2024-02-26 23:06:00 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:07:13 [ERROR]: error
+2024-02-26 23:07:13 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:07:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 23:08:45 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 23:10:12 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:26:14 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:30:30 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:43:10 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:43:16 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:48:54 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:39:57 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:50:32 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:53:52 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:56:57 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:57:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:59:19 [ERROR]: Cannot read properties of null (reading 'errand')

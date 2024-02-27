@@ -245,6 +245,7 @@ module.exports.request_errand = async (req, res) => {
       description,
       lat,
       lng,
+      amount: suggestedAmount,
     });
 
     const postedErrand = await PostedErrand.create({

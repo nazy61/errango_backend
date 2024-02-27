@@ -1105,3 +1105,317 @@
 2024-01-19 11:05:30 [ERROR]: Cannot read properties of null (reading 'errand')
 2024-01-19 11:05:32 [INFO]: /v1/my/requests
 2024-01-19 11:05:32 [INFO]: /v1/my/errands
+2024-02-16 19:16:52 [INFO]: /v1/get_faq_categories
+2024-02-16 19:16:55 [INFO]: /v1/user/login/passcode
+2024-02-16 19:16:56 [INFO]: /v1/user/me
+2024-02-16 19:16:56 [INFO]: /v1/errand/active
+2024-02-16 19:16:56 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-16 19:17:06 [INFO]: /v1/my/requests
+2024-02-16 19:17:06 [INFO]: /v1/my/errands
+2024-02-16 19:17:08 [INFO]: /v1/user/go/online
+2024-02-16 19:17:08 [INFO]: /v1/errands
+2024-02-16 19:17:47 [INFO]: /v1/user/go/offline
+2024-02-16 19:17:51 [INFO]: /v1/user/go/online
+2024-02-16 19:17:51 [INFO]: /v1/errands
+2024-02-21 14:52:44 [INFO]: /v1/get_faq_categories
+2024-02-21 14:53:06 [INFO]: /v1/user/login/passcode
+2024-02-21 14:53:06 [INFO]: /v1/user/me
+2024-02-21 14:53:06 [INFO]: /v1/errand/active
+2024-02-21 14:53:06 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-21 15:16:10 [INFO]: /v1/get_faq_categories
+2024-02-21 15:16:16 [INFO]: /v1/user/login/passcode
+2024-02-21 15:16:17 [INFO]: /v1/user/me
+2024-02-21 15:16:17 [INFO]: /v1/errand/active
+2024-02-21 15:16:17 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-21 15:24:03 [INFO]: /v1/get_faq_categories
+2024-02-21 15:24:07 [INFO]: /v1/user/login/passcode
+2024-02-21 15:24:08 [INFO]: /v1/user/me
+2024-02-21 15:24:08 [INFO]: /v1/errand/active
+2024-02-21 15:24:08 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-21 16:03:50 [INFO]: /v1/get_faq_categories
+2024-02-21 16:04:00 [INFO]: /v1/user/login/passcode
+2024-02-21 16:04:00 [INFO]: /v1/user/me
+2024-02-21 16:04:00 [INFO]: /v1/errand/active
+2024-02-21 16:04:00 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-21 16:25:25 [INFO]: /v1/get_faq_categories
+2024-02-21 16:25:45 [INFO]: /v1/user/login/passcode
+2024-02-21 16:25:46 [INFO]: /v1/user/me
+2024-02-21 16:25:46 [INFO]: /v1/errand/active
+2024-02-21 16:25:46 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-21 16:30:15 [INFO]: /v1/user/me
+2024-02-21 16:30:15 [INFO]: /v1/errand/active
+2024-02-21 16:30:15 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:37:16 [INFO]: /v1/user
+2024-02-26 20:38:13 [INFO]: /v1/user/verify/otp
+2024-02-26 20:38:24 [INFO]: /v1/user/verify/otp
+2024-02-26 20:38:30 [INFO]: /v1/user/verify/otp
+2024-02-26 20:38:54 [INFO]: /v1/user/login
+2024-02-26 20:40:18 [INFO]: /v1/user/bvn
+2024-02-26 20:40:57 [INFO]: /v1/user/bvn
+2024-02-26 20:41:05 [ERROR]: error
+2024-02-26 20:41:05 [ERROR]: Request failed with status code 422
+2024-02-26 20:43:20 [INFO]: /v1/user/bvn
+2024-02-26 20:43:23 [ERROR]: error
+2024-02-26 20:43:23 [ERROR]: Request failed with status code 422
+2024-02-26 20:44:00 [INFO]: /v1/user/bvn
+2024-02-26 20:44:27 [ERROR]: error
+2024-02-26 20:44:27 [ERROR]: Request failed with status code 422
+2024-02-26 20:45:15 [INFO]: /v1/user/bvn
+2024-02-26 20:45:16 [ERROR]: error
+2024-02-26 20:45:16 [ERROR]: Request failed with status code 401
+2024-02-26 20:45:28 [INFO]: /v1/user/bvn
+2024-02-26 20:45:28 [ERROR]: error
+2024-02-26 20:45:28 [ERROR]: Request failed with status code 401
+2024-02-26 20:45:38 [INFO]: /v1/user/bvn
+2024-02-26 20:52:31 [INFO]: /v1/get_faq_categories
+2024-02-26 20:56:40 [INFO]: /v1/user/login
+2024-02-26 20:58:04 [INFO]: /v1/user
+2024-02-26 20:58:12 [INFO]: /v1/user/verify/otp
+2024-02-26 20:58:32 [INFO]: /v1/user/set/pin
+2024-02-26 20:58:39 [INFO]: /v1/user/set/passcode
+2024-02-26 20:58:39 [INFO]: /v1/user/me
+2024-02-26 20:58:39 [INFO]: /v1/errand/active
+2024-02-26 20:58:39 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:59:24 [INFO]: /v1/my/requests
+2024-02-26 20:59:24 [INFO]: /v1/my/errands
+2024-02-26 20:59:27 [INFO]: /v1/errand/active
+2024-02-26 20:59:27 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 20:59:38 [INFO]: /v1/errand/active
+2024-02-26 20:59:38 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:00:23 [INFO]: /v1/my/requests
+2024-02-26 21:00:23 [INFO]: /v1/my/errands
+2024-02-26 21:00:41 [INFO]: /v1/get_faq_categories
+2024-02-26 21:16:34 [INFO]: /v1/get_faq_categories
+2024-02-26 21:16:39 [INFO]: /v1/user/login/passcode
+2024-02-26 21:16:39 [INFO]: /v1/user/me
+2024-02-26 21:16:39 [INFO]: /v1/errand/active
+2024-02-26 21:16:39 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:18:31 [INFO]: /v1/get_faq_categories
+2024-02-26 21:18:35 [INFO]: /v1/user/login/passcode
+2024-02-26 21:18:35 [INFO]: /v1/user/me
+2024-02-26 21:18:35 [INFO]: /v1/errand/active
+2024-02-26 21:18:35 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:21:21 [INFO]: /v1/get_faq_categories
+2024-02-26 21:21:27 [INFO]: /v1/user/login/passcode
+2024-02-26 21:21:27 [INFO]: /v1/user/me
+2024-02-26 21:21:27 [INFO]: /v1/errand/active
+2024-02-26 21:21:27 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:36:31 [INFO]: /v1/get_faq_categories
+2024-02-26 21:36:36 [INFO]: /v1/user/login/passcode
+2024-02-26 21:36:36 [INFO]: /v1/user/me
+2024-02-26 21:36:36 [INFO]: /v1/errand/active
+2024-02-26 21:36:36 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:37:56 [INFO]: /v1/get_faq_categories
+2024-02-26 21:38:03 [INFO]: /v1/user/login/passcode
+2024-02-26 21:38:04 [INFO]: /v1/user/me
+2024-02-26 21:38:04 [INFO]: /v1/errand/active
+2024-02-26 21:38:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:39:42 [INFO]: /v1/get_faq_categories
+2024-02-26 21:39:46 [INFO]: /v1/user/login/passcode
+2024-02-26 21:39:47 [INFO]: /v1/user/me
+2024-02-26 21:39:47 [INFO]: /v1/errand/active
+2024-02-26 21:39:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:40:36 [INFO]: /v1/get_faq_categories
+2024-02-26 21:40:43 [INFO]: /v1/user/login/passcode
+2024-02-26 21:40:43 [INFO]: /v1/user/me
+2024-02-26 21:40:43 [INFO]: /v1/errand/active
+2024-02-26 21:40:43 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:43:36 [INFO]: /v1/get_faq_categories
+2024-02-26 21:43:49 [INFO]: /v1/user/login/passcode
+2024-02-26 21:43:49 [INFO]: /v1/user/me
+2024-02-26 21:43:49 [INFO]: /v1/errand/active
+2024-02-26 21:43:49 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:45:04 [INFO]: /v1/get_faq_categories
+2024-02-26 21:45:14 [INFO]: /v1/user/login/passcode
+2024-02-26 21:45:14 [INFO]: /v1/user/me
+2024-02-26 21:45:14 [INFO]: /v1/errand/active
+2024-02-26 21:45:14 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:45:55 [INFO]: /v1/get_faq_categories
+2024-02-26 21:46:01 [INFO]: /v1/user/login/passcode
+2024-02-26 21:46:02 [INFO]: /v1/user/me
+2024-02-26 21:46:02 [INFO]: /v1/errand/active
+2024-02-26 21:46:02 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:46:57 [INFO]: /v1/get_faq_categories
+2024-02-26 21:47:01 [INFO]: /v1/user/login/passcode
+2024-02-26 21:47:54 [INFO]: /v1/kyc
+2024-02-26 21:48:15 [INFO]: /v1/user/bvn
+2024-02-26 21:48:17 [ERROR]: error
+2024-02-26 21:48:17 [ERROR]: Request failed with status code 422
+2024-02-26 21:50:34 [INFO]: /v1/user/bvn
+2024-02-26 21:50:47 [INFO]: /v1/user/me
+2024-02-26 21:50:47 [INFO]: /v1/errand/active
+2024-02-26 21:50:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:51:58 [INFO]: /v1/get_faq_categories
+2024-02-26 21:52:17 [INFO]: /v1/user/login/passcode
+2024-02-26 21:52:17 [INFO]: /v1/user/me
+2024-02-26 21:52:17 [INFO]: /v1/errand/active
+2024-02-26 21:52:17 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:53:31 [INFO]: /v1/kyc
+2024-02-26 21:53:34 [INFO]: /v1/user/me
+2024-02-26 21:53:34 [INFO]: /v1/errand/active
+2024-02-26 21:53:34 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 21:53:40 [INFO]: /v1/user/go/online
+2024-02-26 21:53:40 [INFO]: /v1/errands
+2024-02-26 22:31:17 [INFO]: /v1/get_faq_categories
+2024-02-26 22:34:28 [INFO]: /v1/get_faq_categories
+2024-02-26 22:35:57 [INFO]: /v1/get_faq_categories
+2024-02-26 22:37:37 [INFO]: /v1/get_faq_categories
+2024-02-26 22:38:29 [INFO]: /v1/get_faq_categories
+2024-02-26 22:47:54 [INFO]: /v1/get_faq_categories
+2024-02-26 22:49:09 [INFO]: /v1/user
+2024-02-26 22:49:13 [INFO]: /v1/user/verify/otp
+2024-02-26 22:49:20 [INFO]: /v1/user/set/pin
+2024-02-26 22:49:26 [INFO]: /v1/user/set/passcode
+2024-02-26 22:50:09 [INFO]: /v1/user/bvn
+2024-02-26 22:50:13 [ERROR]: error
+2024-02-26 22:50:13 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 22:50:18 [INFO]: /v1/user/bvn
+2024-02-26 22:50:19 [ERROR]: error
+2024-02-26 22:50:19 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 22:50:52 [INFO]: /v1/user/bvn
+2024-02-26 22:50:52 [ERROR]: error
+2024-02-26 22:50:52 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:02:22 [INFO]: /v1/roles
+2024-02-26 23:05:01 [INFO]: /v1/get_faq_categories
+2024-02-26 23:05:05 [INFO]: /v1/user/login/passcode
+2024-02-26 23:05:37 [INFO]: /v1/user/bvn
+2024-02-26 23:05:38 [ERROR]: error
+2024-02-26 23:05:38 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:05:59 [INFO]: /v1/user/bvn
+2024-02-26 23:06:00 [ERROR]: error
+2024-02-26 23:06:00 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:06:08 [INFO]: /v1/user/bvn
+2024-02-26 23:06:36 [INFO]: /v1/user/login
+2024-02-26 23:07:05 [INFO]: /v1/user/login
+2024-02-26 23:07:09 [INFO]: /v1/user/bvn
+2024-02-26 23:07:13 [ERROR]: error
+2024-02-26 23:07:13 [ERROR]: Unknown error, please contact the administrator
+2024-02-26 23:07:35 [INFO]: /v1/user/bvn
+2024-02-26 23:07:46 [INFO]: /v1/user/bvn
+2024-02-26 23:07:47 [INFO]: /v1/user/me
+2024-02-26 23:07:47 [INFO]: /v1/errand/active
+2024-02-26 23:07:47 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 23:08:40 [INFO]: /v1/kyc
+2024-02-26 23:08:45 [INFO]: /v1/user/me
+2024-02-26 23:08:45 [INFO]: /v1/errand/active
+2024-02-26 23:08:45 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 23:08:49 [INFO]: /v1/user/go/online
+2024-02-26 23:08:49 [INFO]: /v1/errands
+2024-02-26 23:09:27 [INFO]: /v1/get_faq_categories
+2024-02-26 23:10:04 [INFO]: /v1/errand
+2024-02-26 23:10:11 [INFO]: /v1/user/login/passcode
+2024-02-26 23:10:11 [INFO]: /v1/user/me
+2024-02-26 23:10:12 [INFO]: /v1/errand/active
+2024-02-26 23:10:12 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-26 23:10:16 [INFO]: /v1/user/go/online
+2024-02-26 23:10:16 [INFO]: /v1/errands
+2024-02-26 23:10:49 [INFO]: /v1/errand
+2024-02-26 23:11:06 [INFO]: /v1/user/go/offline
+2024-02-26 23:11:09 [INFO]: /v1/user/go/online
+2024-02-26 23:11:09 [INFO]: /v1/errands
+2024-02-26 23:11:52 [INFO]: /v1/user/go/offline
+2024-02-26 23:11:53 [INFO]: /v1/user/go/online
+2024-02-26 23:11:53 [INFO]: /v1/errands
+2024-02-26 23:39:41 [INFO]: /v1/my/requests
+2024-02-26 23:39:41 [INFO]: /v1/my/errands
+2024-02-27 11:25:21 [INFO]: /v1/get_faq_categories
+2024-02-27 11:26:13 [INFO]: /v1/user/login
+2024-02-27 11:26:14 [INFO]: /v1/user/me
+2024-02-27 11:26:14 [INFO]: /v1/errand/active
+2024-02-27 11:26:14 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:26:18 [INFO]: /v1/user/go/online
+2024-02-27 11:26:18 [INFO]: /v1/errands
+2024-02-27 11:28:25 [INFO]: /v1/get_faq_categories
+2024-02-27 11:30:28 [INFO]: /v1/user/login
+2024-02-27 11:30:30 [INFO]: /v1/user/me
+2024-02-27 11:30:30 [INFO]: /v1/errand/active
+2024-02-27 11:30:30 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:30:37 [INFO]: /v1/user/go/online
+2024-02-27 11:30:37 [INFO]: /v1/errands
+2024-02-27 11:32:59 [INFO]: /v1/get_faq_categories
+2024-02-27 11:40:26 [INFO]: /v1/get_faq_categories
+2024-02-27 11:41:35 [INFO]: /v1/get_faq_categories
+2024-02-27 11:43:09 [INFO]: /v1/user/login/passcode
+2024-02-27 11:43:10 [INFO]: /v1/user/me
+2024-02-27 11:43:10 [INFO]: /v1/errand/active
+2024-02-27 11:43:10 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:43:15 [INFO]: /v1/user/login/passcode
+2024-02-27 11:43:16 [INFO]: /v1/user/me
+2024-02-27 11:43:16 [INFO]: /v1/errand/active
+2024-02-27 11:43:16 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 11:43:24 [INFO]: /v1/user/go/online
+2024-02-27 11:43:25 [INFO]: /v1/errands
+2024-02-27 11:43:29 [INFO]: /v1/user/go/online
+2024-02-27 11:43:29 [INFO]: /v1/errands
+2024-02-27 11:48:46 [INFO]: /v1/get_faq_categories
+2024-02-27 11:48:53 [INFO]: /v1/user/login/passcode
+2024-02-27 11:48:54 [INFO]: /v1/user/me
+2024-02-27 11:48:54 [INFO]: /v1/errand/active
+2024-02-27 11:48:54 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:39:31 [INFO]: /v1/get_faq_categories
+2024-02-27 18:39:56 [INFO]: /v1/user/login/passcode
+2024-02-27 18:39:57 [INFO]: /v1/user/me
+2024-02-27 18:39:57 [INFO]: /v1/errand/active
+2024-02-27 18:39:57 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:40:02 [INFO]: /v1/user/go/online
+2024-02-27 18:40:02 [INFO]: /v1/errands
+2024-02-27 18:50:06 [INFO]: /v1/get_faq_categories
+2024-02-27 18:50:29 [INFO]: /v1/user/login
+2024-02-27 18:50:31 [INFO]: /v1/user/me
+2024-02-27 18:50:31 [INFO]: /v1/errand/active
+2024-02-27 18:50:32 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:50:39 [INFO]: /v1/user/go/online
+2024-02-27 18:50:39 [INFO]: /v1/errands
+2024-02-27 18:51:01 [INFO]: /v1/errand
+2024-02-27 18:51:02 [INFO]: /v1/errand/65de210603ba7146a129ca35
+2024-02-27 18:51:02 [INFO]: /v1/errand/65de210603ba7146a129ca35
+2024-02-27 18:53:24 [INFO]: /v1/get_faq_categories
+2024-02-27 18:53:51 [INFO]: /v1/user/login/passcode
+2024-02-27 18:53:52 [INFO]: /v1/user/me
+2024-02-27 18:53:52 [INFO]: /v1/errand/active
+2024-02-27 18:53:52 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:53:59 [INFO]: /v1/user/go/online
+2024-02-27 18:53:59 [INFO]: /v1/errands
+2024-02-27 18:54:33 [INFO]: /v1/errand
+2024-02-27 18:54:33 [INFO]: /v1/errands
+2024-02-27 18:54:33 [INFO]: /v1/errands
+2024-02-27 18:54:48 [INFO]: /v1/errand/bid
+2024-02-27 18:54:49 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/bids
+2024-02-27 18:54:49 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/bids
+2024-02-27 18:54:54 [INFO]: /v1/errand/accept
+2024-02-27 18:54:55 [INFO]: /v1/errand/active
+2024-02-27 18:54:55 [INFO]: /v1/errand/create/chat
+2024-02-27 18:54:55 [INFO]: /v1/errand/active
+2024-02-27 18:54:55 [INFO]: /v1/errand/active
+2024-02-27 18:54:56 [INFO]: /v1/user/go/online
+2024-02-27 18:54:56 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:54:56 [INFO]: /v1/errands
+2024-02-27 18:54:56 [INFO]: /v1/user/go/online
+2024-02-27 18:54:56 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:54:56 [INFO]: /v1/errands
+2024-02-27 18:55:01 [INFO]: /v1/errand/message/send
+2024-02-27 18:55:01 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:55:01 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:55:01 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:55:15 [INFO]: /v1/errand/message/send
+2024-02-27 18:55:15 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:55:15 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:55:15 [INFO]: /v1/errand/65de21d903ba7146a129ca4f/messages
+2024-02-27 18:56:55 [INFO]: /v1/errand/end/session/65de21d903ba7146a129ca4f
+2024-02-27 18:56:57 [INFO]: /v1/user/me
+2024-02-27 18:56:57 [INFO]: /v1/errand/active
+2024-02-27 18:56:57 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:57:03 [INFO]: /v1/errand/review
+2024-02-27 18:57:04 [INFO]: /v1/user/me
+2024-02-27 18:57:04 [INFO]: /v1/errand/active
+2024-02-27 18:57:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:57:46 [INFO]: /v1/errand
+2024-02-27 18:59:09 [INFO]: /v1/get_faq_categories
+2024-02-27 18:59:18 [INFO]: /v1/user/login/passcode
+2024-02-27 18:59:19 [INFO]: /v1/user/me
+2024-02-27 18:59:19 [INFO]: /v1/errand/active
+2024-02-27 18:59:19 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 18:59:37 [INFO]: /v1/user/go/online
+2024-02-27 18:59:38 [INFO]: /v1/errands
+2024-02-27 18:59:49 [INFO]: /v1/errand
+2024-02-27 18:59:49 [INFO]: /v1/errand/65de231503ba7146a129cac7

@@ -69,6 +69,12 @@ app.use((err, req, res, next) => {
 
 wss.on("connection", (ws) => {
   // WebSocket connection established
+
+  // Set up heartbeat interval
+  const heartbeatInterval = setInterval(() => {
+    sendHeartbeat(ws);
+  }, 5000);
+
   ws.send(
     JSON.stringify({
       message: "WebSocket connection established",
@@ -92,8 +98,17 @@ wss.on("connection", (ws) => {
     }
   });
 
-  ws.on("close", () => {});
+  ws.on("close", () => {
+    clearInterval(heartbeatInterval);
+  });
 });
+
+// Function to send heartbeat messages
+function sendHeartbeat(ws) {
+  if (ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ type: "heartbeat" }));
+  }
+}
 
 server.listen(port, async () => {
   console.log(`Errango listening on port ${port}`);
