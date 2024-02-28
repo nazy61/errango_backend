@@ -1433,3 +1433,46 @@
 2024-02-28 14:23:17 [INFO]: /v1/user/set/pin
 2024-02-28 14:23:26 [INFO]: /v1/user/set/passcode
 2024-02-28 14:23:36 [INFO]: /v1/get_faq_categories
+2024-02-28 21:49:46 [INFO]: /v1/user/verify/otp
+2024-02-28 21:49:46 [ERROR]: error
+2024-02-28 21:49:46 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 21:50:30 [INFO]: /v1/user/verify/otp
+2024-02-28 21:50:31 [ERROR]: error
+2024-02-28 21:50:31 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 21:50:48 [INFO]: /v1/user/verify/otp
+2024-02-28 21:50:48 [ERROR]: error
+2024-02-28 21:50:48 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 21:51:58 [INFO]: /v1/user/verify/otp
+2024-02-28 21:52:02 [ERROR]: error
+2024-02-28 21:52:02 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 21:54:55 [INFO]: /v1/user/verify/otp
+2024-02-28 21:54:55 [ERROR]: error
+2024-02-28 21:54:55 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 22:01:05 [INFO]: /v1/user/verify/otp
+2024-02-28 22:01:06 [ERROR]: error
+2024-02-28 22:01:06 [ERROR]: Forbidden: Invalid token
+2024-02-28 22:01:53 [INFO]: /v1/user/verify/otp
+2024-02-28 22:01:53 [ERROR]: error
+2024-02-28 22:01:53 [ERROR]: Forbidden: Invalid token
+2024-02-28 22:01:59 [INFO]: /v1/user
+2024-02-28 22:02:04 [INFO]: /v1/user/verify/otp
+2024-02-28 22:02:04 [ERROR]: error
+2024-02-28 22:02:04 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 22:03:14 [INFO]: /v1/user/verify/otp
+2024-02-28 22:03:15 [ERROR]: error
+2024-02-28 22:03:15 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 22:04:27 [INFO]: /v1/user/verify/otp
+2024-02-28 22:04:29 [ERROR]: error
+2024-02-28 22:04:29 [ERROR]: Unknown error, please contact the administrator
+2024-02-28 22:05:05 [INFO]: /v1/user/verify/otp
+2024-02-28 22:05:24 [INFO]: /v1/user/set/pin
+2024-02-28 22:05:32 [INFO]: /v1/user/set/passcode
+2024-02-28 22:06:14 [INFO]: /v1/user/bvn
+2024-02-28 22:06:20 [ERROR]: error
+2024-02-28 22:06:20 [ERROR]: Request failed with status code 422
+2024-02-28 22:07:07 [INFO]: /v1/user/bvn
+2024-02-28 22:07:23 [ERROR]: error
+2024-02-28 22:07:23 [ERROR]: Request failed with status code 422
+2024-02-28 22:08:14 [INFO]: /v1/user/bvn
+2024-02-28 22:08:15 [ERROR]: error
+2024-02-28 22:08:15 [ERROR]: Request failed with status code 422

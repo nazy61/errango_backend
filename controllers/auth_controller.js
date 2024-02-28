@@ -288,14 +288,15 @@ module.exports.verify_otp = async (req, res) => {
         // verification.isVerified = true;
         // verification.save();
 
+        console.log("here2", userData);
         const user = await User.create({
           roleId: role._id,
           ...userData,
           fullName: `${userData.firstName} ${userData.lastName}`,
           password: hashedPassword,
         });
+        console.log("here2", userData);
 
-        console.log("here2");
         await Wallet.create({
           user: user._id,
           type: "errango_wallet",

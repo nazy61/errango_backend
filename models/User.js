@@ -21,7 +21,6 @@ const userSchema = new mongoose.Schema(
     },
     profilePicture: {
       type: String,
-      required: false,
     },
     email: {
       type: String,
@@ -35,11 +34,9 @@ const userSchema = new mongoose.Schema(
     },
     bvn: {
       type: String,
-      unique: true,
     },
     accountNumber: {
       type: String,
-      unique: true,
     },
     password: {
       type: String,
@@ -76,7 +73,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.post("save", function (error, doc, next) {
+  console.log("error", error);
   if (error.name === "MongoServerError" && error.code === 11000) {
+    console.log(error.name, error.code, error.keyValue);
     if (error.keyValue.hasOwnProperty("email")) {
       next(
         new Error(

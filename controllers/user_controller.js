@@ -237,7 +237,7 @@ module.exports.update_bvn = async (req, res) => {
     } else {
       return res.status(400).json({
         success: false,
-        message: monnifyResponse.data.responseMessage,
+        message: "BVN Verification failed, please try again",
       });
     }
   } catch (error) {
@@ -246,7 +246,7 @@ module.exports.update_bvn = async (req, res) => {
     logger.error(error);
     return res.status(400).json({
       success: false,
-      message: error.message,
+      message: "BVN Verification failed, please try again",
     });
   }
 };
