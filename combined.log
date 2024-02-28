@@ -1419,3 +1419,17 @@
 2024-02-27 18:59:38 [INFO]: /v1/errands
 2024-02-27 18:59:49 [INFO]: /v1/errand
 2024-02-27 18:59:49 [INFO]: /v1/errand/65de231503ba7146a129cac7
+2024-02-27 21:30:59 [INFO]: /v1/get_faq_categories
+2024-02-27 21:31:59 [INFO]: /v1/user/login/passcode
+2024-02-27 21:32:00 [INFO]: /v1/user/me
+2024-02-27 21:32:00 [INFO]: /v1/errand/active
+2024-02-27 21:32:00 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-02-27 21:35:24 [INFO]: /v1/user/verify/otp
+2024-02-27 21:35:35 [INFO]: /v1/user/verify/otp
+2024-02-27 21:35:45 [INFO]: /v1/user/verify/otp
+2024-02-28 14:07:17 [INFO]: /v1/get_faq_categories
+2024-02-28 14:21:01 [INFO]: /v1/user
+2024-02-28 14:22:42 [INFO]: /v1/user/verify/otp
+2024-02-28 14:23:17 [INFO]: /v1/user/set/pin
+2024-02-28 14:23:26 [INFO]: /v1/user/set/passcode
+2024-02-28 14:23:36 [INFO]: /v1/get_faq_categories
