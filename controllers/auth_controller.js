@@ -275,7 +275,7 @@ module.exports.verify_otp = async (req, res) => {
 
   try {
     const userData = getOtpData(otpToken);
-    const verification = await Verification.findOne().where("otp").equals(otp);
+    // const verification = await Verification.findOne().where("otp").equals(otp);
 
     if (userData) {
       // if (verification && verification.otp === otp && !verification.isVerified) {
@@ -285,8 +285,8 @@ module.exports.verify_otp = async (req, res) => {
 
         const role = await Role.findOne().where("name").equals("user");
 
-        verification.isVerified = true;
-        verification.save();
+        // verification.isVerified = true;
+        // verification.save();
 
         const user = await User.create({
           roleId: role._id,
