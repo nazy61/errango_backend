@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
 
-const transactionSchema = new mongoose.Schema(
+const walletHistorySchema = new mongoose.Schema(
   {
-    user: {
+    wallet: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-    type: {
-      type: String,
+      ref: "Wallet",
       required: true,
     },
     amount: {
@@ -18,12 +14,20 @@ const transactionSchema = new mongoose.Schema(
     amountCharged: {
       type: Number,
     },
+    type: {
+      type: String, // debit or credit
+      required: true,
+    },
     reference: {
       type: String,
       required: true,
     },
-    status: {
-      type: String,
+    balanceBefore: {
+      type: Number,
+      required: true,
+    },
+    balanceAfter: {
+      type: Number,
       required: true,
     },
   },
@@ -32,4 +36,4 @@ const transactionSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Transaction", transactionSchema);
+module.exports = mongoose.model("WalletHistory", walletHistorySchema);

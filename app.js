@@ -36,6 +36,11 @@ app.use("/v1", apiRoutes.authRoutes);
 app.use("/v1", apiRoutes.kycRoutes);
 app.use("/v1", apiRoutes.errandRoutes);
 app.use("/v1", apiRoutes.userRoutes);
+app.use("/v1", apiRoutes.airtimeRoutes);
+app.use("/v1", apiRoutes.mobileDataRoutes);
+app.use("/v1", apiRoutes.electricityRoutes);
+app.use("/v1", apiRoutes.tvRoutes);
+app.use("/v1", apiRoutes.bettingRoutes);
 
 app.post("/v1/send/websocket/notification", (req, res) => {
   wss.clients.forEach((client) => {

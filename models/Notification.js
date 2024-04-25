@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const transactionSchema = new mongoose.Schema(
+const notificationSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -11,25 +11,19 @@ const transactionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    amount: {
-      type: Number,
-      required: true,
-    },
-    amountCharged: {
-      type: Number,
-    },
-    reference: {
+    title: {
       type: String,
       required: true,
     },
-    status: {
+    description: {
       type: String,
       required: true,
     },
+    readAt: String,
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Transaction", transactionSchema);
+module.exports = mongoose.model("Notification", notificationSchema);

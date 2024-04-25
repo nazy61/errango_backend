@@ -1,28 +1,21 @@
 const mongoose = require("mongoose");
 
-const transactionSchema = new mongoose.Schema(
+const airtimeBeneficiarySchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
+    number: {
+      type: String,
+      required: true,
+    },
     type: {
       type: String,
       required: true,
     },
-    amount: {
-      type: Number,
-      required: true,
-    },
-    amountCharged: {
-      type: Number,
-    },
-    reference: {
-      type: String,
-      required: true,
-    },
-    status: {
+    name: {
       type: String,
       required: true,
     },
@@ -32,4 +25,4 @@ const transactionSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Transaction", transactionSchema);
+module.exports = mongoose.model("AirtimeBeneficiary", airtimeBeneficiarySchema);
