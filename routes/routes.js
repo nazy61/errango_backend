@@ -9,6 +9,7 @@ const mobileDataRoutes = require("./mobile_data");
 const electricityRoutes = require("./electricity");
 const tvRoutes = require("./tv");
 const bettingRoutes = require("./betting");
+const monnifyRoutes = require("./monnify");
 
 module.exports = {
   roleRoutes,
@@ -22,4 +23,5 @@ module.exports = {
   electricityRoutes,
   tvRoutes,
   bettingRoutes,
+  monnifyRoutes,
 };

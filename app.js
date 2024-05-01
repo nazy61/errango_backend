@@ -41,6 +41,7 @@ app.use("/v1", apiRoutes.mobileDataRoutes);
 app.use("/v1", apiRoutes.electricityRoutes);
 app.use("/v1", apiRoutes.tvRoutes);
 app.use("/v1", apiRoutes.bettingRoutes);
+app.use("/v1", apiRoutes.monnifyRoutes);
 
 app.post("/v1/send/websocket/notification", (req, res) => {
   wss.clients.forEach((client) => {

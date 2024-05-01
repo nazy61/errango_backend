@@ -128,3 +128,73 @@
 2024-04-25 18:52:23 [ERROR]: Cannot read properties of null (reading 'errand')
 2024-04-25 19:22:11 [ERROR]: Cannot read properties of null (reading 'errand')
 2024-04-25 19:49:43 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-04-28 09:17:31 [ERROR]: Request failed with status code 405
+2024-04-28 09:17:32 [ERROR]: Request failed with status code 401
+2024-04-28 09:20:05 [ERROR]: Request failed with status code 405
+2024-04-28 09:20:36 [ERROR]: Request failed with status code 405
+2024-04-28 09:21:15 [ERROR]: Request failed with status code 401
+2024-04-28 09:21:16 [ERROR]: Request failed with status code 401
+2024-04-28 14:30:54 [ERROR]: Request failed with status code 401
+2024-04-28 14:30:55 [ERROR]: Request failed with status code 401
+2024-04-28 14:32:51 [ERROR]: Request failed with status code 401
+2024-04-29 11:59:37 [ERROR]: bcrypt is not defined
+2024-04-29 12:00:34 [ERROR]: bcrypt is not defined
+2024-04-29 12:00:58 [ERROR]: bcrypt is not defined
+2024-04-29 12:01:35 [ERROR]: bcrypt is not defined
+2024-04-29 12:02:10 [ERROR]: bankCode is not defined
+2024-04-29 12:03:22 [ERROR]: Request failed with status code 422
+2024-04-29 12:05:13 [ERROR]: Transaction validation failed: monnifyResponse: Cast to string failed for value "{
+  amount: 10000,
+  reference: '267118743',
+  status: 'PENDING_AUTHORIZATION',
+  dateCreated: '2024-04-29T11:05:14.302+0000',
+  totalFee: 35,
+  destinationBankName: 'Access bank',
+  destinationAccountNumber: '0694849327',
+  destinationBankCode: '044'
+}" (type Object) at path "monnifyResponse"
+2024-04-29 12:26:36 [ERROR]: Transaction validation failed: monnifyResponse: Cast to string failed for value "{
+  amount: 10000,
+  reference: '206554321',
+  status: 'PENDING_AUTHORIZATION',
+  dateCreated: '2024-04-29T11:26:37.576+0000',
+  totalFee: 35,
+  destinationBankName: 'Access bank',
+  destinationAccountNumber: '0694849327',
+  destinationBankCode: '044'
+}" (type Object) at path "monnifyResponse"
+2024-04-29 12:47:06 [ERROR]: transaction is not defined
+2024-05-01 06:37:52 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:20:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:21:35 [ERROR]: Request failed with status code 400
+2024-05-01 08:31:02 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:32:09 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:02:16 [ERROR]: Request failed with status code 422
+2024-05-01 09:03:07 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:08:04 [ERROR]: Request failed with status code 404
+2024-05-01 09:11:37 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:12:36 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:25:59 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 10:39:11 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:20:18 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:20:55 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:21:46 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:57:29 [ERROR]: Request failed with status code 400
+2024-05-01 12:30:40 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 12:51:05 [ERROR]: Request failed with status code 400
+2024-05-01 12:52:19 [ERROR]: Request failed with status code 400
+2024-05-01 12:52:54 [ERROR]: Request failed with status code 400
+2024-05-01 12:53:40 [ERROR]: Request failed with status code 400
+2024-05-01 12:55:04 [ERROR]: Request failed with status code 404
+2024-05-01 12:55:22 [ERROR]: Request failed with status code 404
+2024-05-01 13:03:44 [ERROR]: Request failed with status code 400
+2024-05-01 13:08:19 [ERROR]: Request failed with status code 400
+2024-05-01 13:12:45 [ERROR]: Request failed with status code 404
+2024-05-01 13:13:40 [ERROR]: Request failed with status code 400
+2024-05-01 13:17:23 [ERROR]: input_string is not defined
+2024-05-01 13:17:43 [ERROR]: "%7C".join is not a function
+2024-05-01 13:21:32 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:23:01 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:24:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:25:35 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:27:45 [ERROR]: Cannot read properties of null (reading 'errand')

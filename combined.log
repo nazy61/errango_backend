@@ -1724,3 +1724,277 @@
 2024-04-25 19:49:45 [INFO]: /v1/airtime/beneficiaries
 2024-04-25 19:49:47 [INFO]: /v1/mobile/data/MTN_NIGERIA
 2024-04-25 19:51:29 [INFO]: /v1/mobile/data/MTN_NIGERIA
+2024-04-28 09:17:30 [INFO]: /v1/monnify/banks
+2024-04-28 09:17:31 [ERROR]: Request failed with status code 405
+2024-04-28 09:17:32 [ERROR]: Request failed with status code 401
+2024-04-28 09:20:04 [INFO]: /v1/monnify/banks
+2024-04-28 09:20:05 [ERROR]: Request failed with status code 405
+2024-04-28 09:20:36 [INFO]: /v1/monnify/banks
+2024-04-28 09:20:36 [ERROR]: Request failed with status code 405
+2024-04-28 09:21:14 [INFO]: /v1/monnify/banks
+2024-04-28 09:21:15 [ERROR]: Request failed with status code 401
+2024-04-28 09:21:16 [ERROR]: Request failed with status code 401
+2024-04-28 14:30:51 [INFO]: /v1/monnify/banks
+2024-04-28 14:30:54 [ERROR]: Request failed with status code 401
+2024-04-28 14:30:55 [ERROR]: Request failed with status code 401
+2024-04-28 14:32:49 [INFO]: /v1/monnify/banks
+2024-04-28 14:32:51 [ERROR]: Request failed with status code 401
+2024-04-28 14:34:25 [INFO]: /v1/monnify/banks
+2024-04-28 14:34:57 [INFO]: /v1/monnify/banks
+2024-04-29 09:04:41 [INFO]: /v1/get_faq_categories
+2024-04-29 11:21:37 [INFO]: /v1/get_faq_categories
+2024-04-29 11:27:07 [INFO]: /v1/monnify/banks
+2024-04-29 11:27:20 [INFO]: /v1/user/login
+2024-04-29 11:28:11 [INFO]: /v1/monnify/banks
+2024-04-29 11:34:03 [INFO]: /v1/monnify/account/verify
+2024-04-29 11:47:23 [INFO]: /v1/beneficiary/add
+2024-04-29 11:59:37 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 11:59:37 [ERROR]: bcrypt is not defined
+2024-04-29 12:00:34 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:00:34 [ERROR]: bcrypt is not defined
+2024-04-29 12:00:58 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:00:58 [ERROR]: bcrypt is not defined
+2024-04-29 12:01:35 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:01:35 [ERROR]: bcrypt is not defined
+2024-04-29 12:01:53 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:02:04 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:02:10 [ERROR]: bankCode is not defined
+2024-04-29 12:02:35 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:03:22 [ERROR]: Request failed with status code 422
+2024-04-29 12:05:03 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:05:13 [ERROR]: Transaction validation failed: monnifyResponse: Cast to string failed for value "{
+  amount: 10000,
+  reference: '267118743',
+  status: 'PENDING_AUTHORIZATION',
+  dateCreated: '2024-04-29T11:05:14.302+0000',
+  totalFee: 35,
+  destinationBankName: 'Access bank',
+  destinationAccountNumber: '0694849327',
+  destinationBankCode: '044'
+}" (type Object) at path "monnifyResponse"
+2024-04-29 12:26:33 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:26:36 [ERROR]: Transaction validation failed: monnifyResponse: Cast to string failed for value "{
+  amount: 10000,
+  reference: '206554321',
+  status: 'PENDING_AUTHORIZATION',
+  dateCreated: '2024-04-29T11:26:37.576+0000',
+  totalFee: 35,
+  destinationBankName: 'Access bank',
+  destinationAccountNumber: '0694849327',
+  destinationBankCode: '044'
+}" (type Object) at path "monnifyResponse"
+2024-04-29 12:38:17 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:38:33 [INFO]: /v1/user/login
+2024-04-29 12:39:08 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:47:04 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:47:06 [ERROR]: transaction is not defined
+2024-04-29 12:47:43 [INFO]: /v1/monnify/transfer/initiate
+2024-04-29 12:49:22 [INFO]: /v1/monnify/transfer/complete
+2024-04-29 12:50:07 [INFO]: /v1/transfer/history
+2024-04-30 13:27:55 [INFO]: /v1/get_faq_categories
+2024-04-30 13:47:44 [INFO]: /v1/user/login
+2024-04-30 13:48:08 [INFO]: /v1/monnify/transfer/initiate
+2024-04-30 13:53:51 [INFO]: /v1/transfer/history
+2024-04-30 13:59:57 [INFO]: /v1/get_faq_categories
+2024-05-01 06:37:14 [INFO]: /v1/get_faq_categories
+2024-05-01 06:37:51 [INFO]: /v1/user/login/passcode
+2024-05-01 06:37:52 [INFO]: /v1/user/me
+2024-05-01 06:37:52 [INFO]: /v1/errand/active
+2024-05-01 06:37:52 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 06:59:15 [INFO]: /v1/monnify/banks
+2024-05-01 07:00:38 [INFO]: /v1/monnify/banks
+2024-05-01 07:02:15 [INFO]: /v1/monnify/account/verify
+2024-05-01 07:02:37 [INFO]: /v1/beneficiary/add
+2024-05-01 07:15:59 [INFO]: /v1/beneficiaries
+2024-05-01 07:28:09 [INFO]: /v1/monnify/banks
+2024-05-01 07:35:32 [INFO]: /v1/monnify/banks
+2024-05-01 07:38:14 [INFO]: /v1/monnify/banks
+2024-05-01 08:19:56 [INFO]: /v1/get_faq_categories
+2024-05-01 08:20:04 [INFO]: /v1/user/login/passcode
+2024-05-01 08:20:04 [INFO]: /v1/user/me
+2024-05-01 08:20:04 [INFO]: /v1/errand/active
+2024-05-01 08:20:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:20:06 [INFO]: /v1/beneficiaries
+2024-05-01 08:20:08 [INFO]: /v1/monnify/banks
+2024-05-01 08:21:17 [INFO]: /v1/monnify/account/verify
+2024-05-01 08:21:34 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 08:21:35 [ERROR]: Request failed with status code 400
+2024-05-01 08:23:47 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 08:25:03 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 08:26:55 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 08:27:13 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 08:31:02 [INFO]: /v1/user/me
+2024-05-01 08:31:02 [INFO]: /v1/errand/active
+2024-05-01 08:31:02 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:31:04 [INFO]: /v1/beneficiaries
+2024-05-01 08:31:05 [INFO]: /v1/monnify/banks
+2024-05-01 08:31:21 [INFO]: /v1/monnify/account/verify
+2024-05-01 08:31:32 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 08:31:53 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 08:32:08 [INFO]: /v1/user/me
+2024-05-01 08:32:08 [INFO]: /v1/errand/active
+2024-05-01 08:32:09 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 08:32:15 [INFO]: /v1/beneficiaries
+2024-05-01 08:48:19 [INFO]: /v1/beneficiaries
+2024-05-01 08:48:19 [INFO]: /v1/transfer/history
+2024-05-01 08:59:41 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:00:00 [INFO]: /v1/monnify/banks
+2024-05-01 09:00:22 [INFO]: /v1/monnify/account/verify
+2024-05-01 09:00:33 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:02:14 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:02:16 [ERROR]: Request failed with status code 422
+2024-05-01 09:02:39 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:02:53 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 09:03:07 [INFO]: /v1/user/me
+2024-05-01 09:03:07 [INFO]: /v1/errand/active
+2024-05-01 09:03:07 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:03:10 [INFO]: /v1/beneficiaries
+2024-05-01 09:03:10 [INFO]: /v1/transfer/history
+2024-05-01 09:04:13 [INFO]: /v1/user/login
+2024-05-01 09:04:32 [INFO]: /v1/transfer/history
+2024-05-01 09:07:41 [INFO]: /v1/monnify/banks
+2024-05-01 09:08:02 [INFO]: /v1/monnify/account/verify
+2024-05-01 09:08:04 [ERROR]: Request failed with status code 404
+2024-05-01 09:08:36 [INFO]: /v1/monnify/account/verify
+2024-05-01 09:08:49 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:09:03 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 09:11:37 [INFO]: /v1/user/me
+2024-05-01 09:11:37 [INFO]: /v1/errand/active
+2024-05-01 09:11:37 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:11:39 [INFO]: /v1/beneficiaries
+2024-05-01 09:11:39 [INFO]: /v1/transfer/history
+2024-05-01 09:11:42 [INFO]: /v1/monnify/banks
+2024-05-01 09:11:56 [INFO]: /v1/monnify/account/verify
+2024-05-01 09:12:09 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 09:12:24 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 09:12:36 [INFO]: /v1/user/me
+2024-05-01 09:12:36 [INFO]: /v1/errand/active
+2024-05-01 09:12:36 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:14:56 [INFO]: /v1/transfer/history/user
+2024-05-01 09:15:11 [INFO]: /v1/transfer/history/user
+2024-05-01 09:15:43 [INFO]: /v1/transfer/history/user
+2024-05-01 09:16:04 [INFO]: /v1/transfer/history/user
+2024-05-01 09:17:50 [INFO]: /v1/transfer/history/user?accountNumber=0694849327
+2024-05-01 09:18:20 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 09:25:38 [INFO]: /v1/beneficiaries
+2024-05-01 09:25:38 [INFO]: /v1/transfer/history
+2024-05-01 09:25:53 [INFO]: /v1/get_faq_categories
+2024-05-01 09:25:58 [INFO]: /v1/user/login/passcode
+2024-05-01 09:25:59 [INFO]: /v1/user/me
+2024-05-01 09:25:59 [INFO]: /v1/errand/active
+2024-05-01 09:25:59 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 09:26:03 [INFO]: /v1/beneficiaries
+2024-05-01 09:26:03 [INFO]: /v1/transfer/history
+2024-05-01 09:26:06 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 09:26:09 [INFO]: /v1/transfer/history/8109652658
+2024-05-01 09:26:12 [INFO]: /v1/transfer/history/8109652658
+2024-05-01 09:26:14 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 10:38:04 [INFO]: /v1/get_faq_categories
+2024-05-01 10:39:10 [INFO]: /v1/user/login/passcode
+2024-05-01 10:39:11 [INFO]: /v1/user/me
+2024-05-01 10:39:11 [INFO]: /v1/errand/active
+2024-05-01 10:39:11 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 10:39:24 [INFO]: /v1/beneficiaries
+2024-05-01 10:39:24 [INFO]: /v1/transfer/history
+2024-05-01 10:39:27 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 11:20:12 [INFO]: /v1/get_faq_categories
+2024-05-01 11:20:17 [INFO]: /v1/user/login/passcode
+2024-05-01 11:20:18 [INFO]: /v1/user/me
+2024-05-01 11:20:18 [INFO]: /v1/errand/active
+2024-05-01 11:20:18 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:20:19 [INFO]: /v1/beneficiaries
+2024-05-01 11:20:19 [INFO]: /v1/transfer/history
+2024-05-01 11:20:22 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 11:20:50 [INFO]: /v1/get_faq_categories
+2024-05-01 11:20:54 [INFO]: /v1/user/login/passcode
+2024-05-01 11:20:55 [INFO]: /v1/user/me
+2024-05-01 11:20:55 [INFO]: /v1/errand/active
+2024-05-01 11:20:55 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:20:56 [INFO]: /v1/beneficiaries
+2024-05-01 11:20:56 [INFO]: /v1/transfer/history
+2024-05-01 11:20:59 [INFO]: /v1/transfer/history/0694849327
+2024-05-01 11:21:17 [INFO]: /v1/monnify/transfer/initiate
+2024-05-01 11:21:39 [INFO]: /v1/monnify/transfer/complete
+2024-05-01 11:21:45 [INFO]: /v1/user/me
+2024-05-01 11:21:45 [INFO]: /v1/errand/active
+2024-05-01 11:21:46 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 11:46:35 [INFO]: /v1/monnify/banks
+2024-05-01 11:46:42 [INFO]: /v1/user/login
+2024-05-01 11:47:00 [INFO]: /v1/monnify/banks
+2024-05-01 11:57:28 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 11:57:29 [ERROR]: Request failed with status code 400
+2024-05-01 11:58:07 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:00:10 [INFO]: /v1/monnify/credit/transfer
+2024-05-01 12:02:09 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:30:26 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:30:36 [INFO]: /v1/get_faq_categories
+2024-05-01 12:30:40 [INFO]: /v1/user/login/passcode
+2024-05-01 12:30:40 [INFO]: /v1/user/me
+2024-05-01 12:30:40 [INFO]: /v1/errand/active
+2024-05-01 12:30:40 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 12:30:47 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:30:48 [INFO]: /v1/monnify/credit/transfer
+2024-05-01 12:31:43 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:45:37 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:51:04 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:51:05 [ERROR]: Request failed with status code 400
+2024-05-01 12:52:18 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:52:19 [ERROR]: Request failed with status code 400
+2024-05-01 12:52:53 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:52:54 [ERROR]: Request failed with status code 400
+2024-05-01 12:52:59 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:53:39 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:53:40 [ERROR]: Request failed with status code 400
+2024-05-01 12:54:29 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:54:41 [INFO]: /v1/user/login
+2024-05-01 12:55:03 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:55:04 [ERROR]: Request failed with status code 404
+2024-05-01 12:55:21 [INFO]: /v1/monnify/credit/card
+2024-05-01 12:55:22 [ERROR]: Request failed with status code 404
+2024-05-01 12:55:51 [INFO]: /v1/monnify/credit/initialize
+2024-05-01 12:56:02 [INFO]: /v1/monnify/credit/card
+2024-05-01 13:03:44 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:03:44 [ERROR]: Request failed with status code 400
+2024-05-01 13:08:18 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:08:19 [ERROR]: Request failed with status code 400
+2024-05-01 13:12:43 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:12:45 [ERROR]: Request failed with status code 404
+2024-05-01 13:13:39 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:13:40 [ERROR]: Request failed with status code 400
+2024-05-01 13:14:25 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:17:22 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:17:23 [ERROR]: input_string is not defined
+2024-05-01 13:17:42 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:17:43 [ERROR]: "%7C".join is not a function
+2024-05-01 13:19:56 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:20:21 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:21:12 [INFO]: /v1/user/login
+2024-05-01 13:21:27 [INFO]: /v1/get_faq_categories
+2024-05-01 13:21:31 [INFO]: /v1/user/login/passcode
+2024-05-01 13:21:32 [INFO]: /v1/user/me
+2024-05-01 13:21:32 [INFO]: /v1/errand/active
+2024-05-01 13:21:32 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:22:42 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:22:56 [INFO]: /v1/get_faq_categories
+2024-05-01 13:23:00 [INFO]: /v1/user/login/passcode
+2024-05-01 13:23:01 [INFO]: /v1/user/me
+2024-05-01 13:23:01 [INFO]: /v1/errand/active
+2024-05-01 13:23:01 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:23:45 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:23:59 [INFO]: /v1/get_faq_categories
+2024-05-01 13:24:04 [INFO]: /v1/user/login/passcode
+2024-05-01 13:24:04 [INFO]: /v1/user/me
+2024-05-01 13:24:04 [INFO]: /v1/errand/active
+2024-05-01 13:24:04 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:25:26 [INFO]: /v1/get_faq_categories
+2024-05-01 13:25:28 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:25:35 [INFO]: /v1/user/login/passcode
+2024-05-01 13:25:35 [INFO]: /v1/user/me
+2024-05-01 13:25:35 [INFO]: /v1/errand/active
+2024-05-01 13:25:35 [ERROR]: Cannot read properties of null (reading 'errand')
+2024-05-01 13:27:31 [INFO]: /v1/monnify/credit/verify
+2024-05-01 13:27:40 [INFO]: /v1/get_faq_categories
+2024-05-01 13:27:44 [INFO]: /v1/user/login/passcode
+2024-05-01 13:27:45 [INFO]: /v1/user/me
+2024-05-01 13:27:45 [INFO]: /v1/errand/active
+2024-05-01 13:27:45 [ERROR]: Cannot read properties of null (reading 'errand')

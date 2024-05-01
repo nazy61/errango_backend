@@ -26,6 +26,21 @@ const transactionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    monnifyResponse: {
+      type: String,
+    },
+    accountNumber: {
+      type: String,
+    },
+    accountName: {
+      type: String,
+    },
+    bankName: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
   },
   {
     timestamps: true,
