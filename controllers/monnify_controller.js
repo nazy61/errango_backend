@@ -524,11 +524,6 @@ module.exports.charge_card_otp = async (req, res) => {
   }
 };
 
-function convert_string(input_string) {
-  parts = input_string.split("|");
-  return parts.join("%7C");
-}
-
 module.exports.verify_transaction = async (req, res) => {
   const { transactionReference } = req.body;
 
@@ -617,3 +612,8 @@ module.exports.report_transaction = async (req, res) => {
     });
   }
 };
+
+function convert_string(input_string) {
+  parts = input_string.split("|");
+  return parts.join("%7C");
+}

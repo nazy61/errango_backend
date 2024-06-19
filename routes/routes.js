@@ -10,6 +10,7 @@ const electricityRoutes = require("./electricity");
 const tvRoutes = require("./tv");
 const bettingRoutes = require("./betting");
 const monnifyRoutes = require("./monnify");
+const paystackRoutes = require("./paystack");
 
 module.exports = {
   roleRoutes,
@@ -24,4 +25,5 @@ module.exports = {
   tvRoutes,
   bettingRoutes,
   monnifyRoutes,
+  paystackRoutes,
 };
